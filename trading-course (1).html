@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>20-Day Candle Psychology Mastery</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+:root{
+  --bg:#0d0f14;--s1:#13161d;--s2:#1a1e28;--b:#252b38;
+  --g:#00e676;--r:#ff4757;--gold:#ffd32a;--blue:#3d8bff;
+  --purple:#b44fff;--orange:#ff6b35;--cyan:#00d4ff;
+  --text:#dde3f0;--dim:#8892a4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;font-size:15px;line-height:1.6}
+/* ── HERO ── */
+.hero{background:linear-gradient(180deg,#0d0f14 0%,#111620 100%);padding:60px 20px 50px;text-align:center;position:relative;overflow:hidden;border-bottom:1px solid var(--b)}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 120%,rgba(0,230,118,.06),transparent);pointer-events:none}
+.hero h1{font-size:clamp(2rem,6vw,4rem);font-weight:700;line-height:1;letter-spacing:-.02em;margin-bottom:16px}
+.hero h1 span{color:var(--g)}
+.hero p{color:var(--dim);max-width:520px;margin:0 auto 28px;font-size:1rem}
+.tag{display:inline-block;background:rgba(0,230,118,.1);border:1px solid rgba(0,230,118,.3);color:var(--g);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:20px;font-family:'JetBrains Mono',monospace}
+.hero-stats{display:flex;justify-content:center;gap:36px;flex-wrap:wrap;margin-top:8px}
+.hs{text-align:center}.hs b{display:block;font-size:2rem;color:var(--g);font-family:'JetBrains Mono',monospace}.hs span{font-size:.72rem;color:var(--dim);text-transform:uppercase;letter-spacing:.08em}
+/* ── NAV ── */
+.pnav{position:sticky;top:0;z-index:100;background:rgba(13,15,20,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--b);display:flex;gap:6px;padding:10px 16px;overflow-x:auto;scrollbar-width:none}
+.pnav::-webkit-scrollbar{display:none}
+.pnav button{flex-shrink:0;padding:6px 14px;border-radius:6px;border:1px solid var(--b);background:var(--s1);color:var(--dim);font-family:'Space Grotesk',sans-serif;font-size:.75rem;cursor:pointer;transition:all .2s;white-space:nowrap}
+.pnav button.act,.pnav button:hover{border-color:var(--ph,var(--g));color:var(--ph,var(--g));background:rgba(255,255,255,.04)}
+/* ── LAYOUT ── */
+.wrap{max-width:960px;margin:0 auto;padding:40px 16px 80px}
+/* ── PROGRESS ── */
+.prog-box{background:var(--s1);border:1px solid var(--b);border-radius:12px;padding:20px 22px;margin-bottom:36px}
+.prog-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:.82rem;color:var(--dim)}
+.prog-top strong{color:var(--g);font-size:1rem;font-family:'JetBrains Mono',monospace}
+.pbar{height:5px;background:var(--b);border-radius:10px;overflow:hidden;margin-bottom:14px}
+.pbar-fill{height:100%;background:linear-gradient(90deg,var(--g),var(--cyan));border-radius:10px;transition:width .5s ease}
+.dots{display:flex;flex-wrap:wrap;gap:5px}
+.dot{width:26px;height:26px;border-radius:50%;border:1.5px solid var(--b);background:var(--s2);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--dim);cursor:pointer;transition:all .2s;font-family:'JetBrains Mono',monospace}
+.dot.done{background:var(--g);border-color:var(--g);color:#000;font-weight:700}
+/* ── PHASE HEADER ── */
+.phase-sec{margin-bottom:56px}
+.phase-hdr{border-radius:10px;border:1px solid var(--b);padding:18px 22px;margin-bottom:20px;display:flex;align-items:center;gap:14px;background:var(--s1);position:relative;overflow:hidden}
+.phase-hdr::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--ph)}
+.phase-hdr .icon{font-size:2rem}
+.phase-hdr h2{font-size:1.25rem;font-weight:700;color:var(--ph)}
+.phase-hdr p{font-size:.8rem;color:var(--dim)}
+.phase-hdr .days-tag{margin-left:auto;font-size:.7rem;padding:3px 10px;border-radius:4px;border:1px solid var(--ph);color:var(--ph);font-family:'JetBrains Mono',monospace;white-space:nowrap}
+/* ── DAY CARD ── */
+.day-card{background:var(--s1);border:1px solid var(--b);border-radius:10px;margin-bottom:14px;overflow:hidden;transition:box-shadow .2s}
+.day-card:hover{box-shadow:0 4px 24px rgba(0,0,0,.35)}
+.day-card.done-card{border-color:rgba(0,230,118,.25)}
+.dc-head{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;background:var(--s2);user-select:none}
+.day-label{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--dim);background:var(--b);padding:3px 8px;border-radius:4px;flex-shrink:0}
+.day-ttl{font-weight:600;font-size:.95rem;flex:1}
+.dc-check{width:26px;height:26px;border-radius:50%;border:1.5px solid var(--b);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;flex-shrink:0;font-size:.8rem}
+.dc-check:hover{border-color:var(--g)}
+.dc-check.done{background:var(--g);border-color:var(--g);color:#000;font-weight:700}
+.dc-arr{color:var(--dim);font-size:.75rem;transition:transform .2s;flex-shrink:0}
+.day-card.open .dc-arr{transform:rotate(180deg)}
+.dc-body{display:none;padding:18px 20px;border-top:1px solid var(--b)}
+.day-card.open .dc-body{display:block}
+/* ── CONTENT BLOCKS ── */
+.blk{border-radius:8px;padding:13px 15px;margin-bottom:12px}
+.blk-lbl{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px;font-family:'JetBrains Mono',monospace;font-weight:600}
+.blk.story{background:rgba(255,211,42,.07);border-left:3px solid var(--gold)}
+.blk.story .blk-lbl{color:var(--gold)}
+.blk.story p{color:var(--text);font-size:.9rem;line-height:1.65}
+.blk.learn{background:var(--s2);border:1px solid var(--b)}
+.blk.learn .blk-lbl{color:var(--cyan)}
+.blk.prac{background:rgba(61,139,255,.07);border:1px solid rgba(61,139,255,.2)}
+.blk.prac .blk-lbl{color:var(--blue)}
+.blk.rules{background:rgba(255,71,87,.07);border:1px solid rgba(255,71,87,.2)}
+.blk.rules .blk-lbl{color:var(--r)}
+.li{display:flex;align-items:flex-start;gap:8px;font-size:.88rem;padding:4px 0}
+.li::before{content:'▸';flex-shrink:0;margin-top:1px}
+.li.g::before{color:var(--g)}.li.r::before{color:var(--r)}.li.b::before{color:var(--blue)}.li.c::before{color:var(--cyan)}.li.go::before{color:var(--gold)}
+.li.rule::before{content:'✗';color:var(--r)}
+/* ── CANDLE VISUAL AREA ── */
+.candle-vis{background:var(--s2);border:1px solid var(--b);border-radius:8px;padding:14px 16px;margin-bottom:12px}
+.candle-vis .blk-lbl{color:var(--purple);margin-bottom:10px}
+.candle-vis .vis-wrap{display:flex;flex-wrap:wrap;gap:20px;align-items:flex-end;justify-content:center}
+.cv-item{display:flex;flex-direction:column;align-items:center;gap:4px}
+.cv-label{font-size:.68rem;color:var(--dim);text-align:center;margin-top:4px;max-width:70px}
+.cv-label.g{color:var(--g)}.cv-label.r{color:var(--r)}.cv-label.gold{color:var(--gold)}
+/* ── COMPLETE BTN ── */
+.cbtn{width:100%;padding:11px;border-radius:7px;border:1px solid var(--g);background:transparent;color:var(--g);font-family:'Space Grotesk',sans-serif;font-size:.82rem;cursor:pointer;transition:all .2s;margin-top:6px;letter-spacing:.04em}
+.cbtn:hover{background:rgba(0,230,118,.1)}
+.cbtn.done{background:var(--g);color:#000;font-weight:700}
+/* ── DAILY STRUCTURE ── */
+.sched{background:var(--s1);border:1px solid var(--b);border-radius:12px;padding:24px;margin-bottom:28px}
+.sched h3{font-size:1rem;color:var(--gold);margin-bottom:18px}
+.sched-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--b)}
+.sched-row:last-child{border-bottom:none;color:var(--g)}
+.sched-t{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--gold);width:50px;flex-shrink:0}
+.sched-n{font-size:.88rem;flex:1}
+/* ── GOLDEN RULE ── */
+.golden{background:linear-gradient(135deg,rgba(255,211,42,.07),rgba(0,230,118,.07));border:1px solid rgba(255,211,42,.3);border-radius:12px;padding:26px;text-align:center;margin-bottom:28px}
+.golden h3{font-size:.72rem;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;margin-bottom:10px;font-family:'JetBrains Mono',monospace}
+.golden p{font-size:1.25rem;color:var(--text);font-style:italic;line-height:1.5}
+/* ── RESULTS ── */
+.res-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:40px}
+.res-card{background:var(--s1);border:1px solid rgba(0,230,118,.2);border-radius:10px;padding:16px;display:flex;gap:10px;align-items:flex-start}
+.res-tick{font-size:1.1rem;flex-shrink:0}
+.res-card p{font-size:.84rem;line-height:1.45}
+/* ── TOAST ── */
+.toast{position:fixed;bottom:20px;right:20px;background:var(--g);color:#000;padding:10px 18px;border-radius:8px;font-size:.8rem;font-weight:700;z-index:999;transform:translateY(60px);opacity:0;transition:all .3s}
+.toast.show{transform:translateY(0);opacity:1}
+/* ── SVG CANDLE HELPERS ── */
+svg.cv{overflow:visible}
+
+/* ── CHART DEMO ── */
+.chart-demo{background:#0a0d12;border:1px solid var(--b);border-radius:8px;padding:10px;margin-bottom:12px}
+.chart-demo .chart-title{font-size:.65rem;color:var(--dim);font-family:'JetBrains Mono',monospace;margin-bottom:6px;letter-spacing:.08em;text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="tag">20-Day Trading Mastery Program</div>
+  <h1>Candle <span>Psychology</span><br>Mastery</h1>
+  <p>Read the market like a story — from zero to confident in 30 min/day</p>
+  <div class="hero-stats">
+    <div class="hs"><b>20</b><span>Days</span></div>
+    <div class="hs"><b>6</b><span>Phases</span></div>
+    <div class="hs"><b>30</b><span>Min/Day</span></div>
+    <div class="hs"><b>∞</b><span>Confidence</span></div>
+  </div>
+</div>
+
+<nav class="pnav" id="pnav">
+  <button style="--ph:var(--g)" data-ph="1" onclick="goPhase(1)" class="act">🟢 Phase 1: See the Boss</button>
+  <button style="--ph:var(--gold)" data-ph="2" onclick="goPhase(2)">🟡 Phase 2: Trend</button>
+  <button style="--ph:var(--blue)" data-ph="3" onclick="goPhase(3)">🔵 Phase 3: Pattern</button>
+  <button style="--ph:var(--purple)" data-ph="4" onclick="goPhase(4)">🟣 Phase 4: Market Behavior</button>
+  <button style="--ph:var(--r)" data-ph="5" onclick="goPhase(5)">🔴 Phase 5: Full System</button>
+  <button style="--ph:var(--orange)" data-ph="6" onclick="goPhase(6)">🟠 Phase 6: Simulation</button>
+</nav>
+
+<div class="wrap">
+
+<!-- PROGRESS -->
+<div class="prog-box">
+  <div class="prog-top"><span>Your Journey</span><strong id="ptxt">0 / 20 Days</strong></div>
+  <div class="pbar"><div class="pbar-fill" id="pbar" style="width:0%"></div></div>
+  <div class="dots" id="dots"></div>
+</div>
+
+<!-- ════════════ PHASE 1 ════════════ -->
+<div class="phase-sec" id="ph1" data-ps="1">
+  <div class="phase-hdr" style="--ph:var(--g)">
+    <div class="icon">🎯</div>
+    <div><h2>SEE THE BOSS</h2><p>Learn to read every candle like a story — Day 1 to 5</p></div>
+    <div class="days-tag">Day 1–5</div>
+  </div>
+
+  <!-- DAY 1 -->
+  <div class="day-card" id="c1">
+    <div class="dc-head" onclick="tog(1)">
+      <div class="day-label">DAY 01</div>
+      <div class="day-ttl">What is a Candle?</div>
+      <div class="dc-check" id="ck1" onclick="done(event,1)"></div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk story">
+        <div class="blk-lbl">📖 Story</div>
+        <p>Every candle = a battle between buyers ⚔️ and sellers. One side wins. The candle shows you who.</p>
+      </div>
+
+      <!-- VISUAL: Green vs Red candle -->
+      <div class="candle-vis">
+        <div class="blk-lbl">👁 Visual — Green vs Red Candle</div>
+        <div class="vis-wrap">
+          <!-- GREEN CANDLE -->
+          <div class="cv-item">
+            <svg width="40" height="120" class="cv">
+              <line x1="20" y1="5" x2="20" y2="25" stroke="#8892a4" stroke-width="2"/>
+              <rect x="10" y="25" width="20" height="60" rx="2" fill="#00e676"/>
+              <line x1="20" y1="85" x2="20" y2="105" stroke="#8892a4" stroke-width="2"/>
+              <!-- labels -->
+              <text x="26" y="15" fill="#8892a4" font-size="8" font-family="monospace">high</text>
+              <text x="26" y="55" fill="#00e676" font-size="8" font-family="monospace">close</text>
+              <text x="26" y="78" fill="#00e676" font-size="8" font-family="monospace">open</text>
+              <text x="26" y="98" fill="#8892a4" font-size="8" font-family="monospace">low</text>
+            </svg>
+            <div class="cv-label g">🟢 GREEN<br>Buyers Won</div>
+          </div>
+          <!-- RED CANDLE -->
+          <div class="cv-item">
+            <svg width="40" height="120" class="cv">
+              <line x1="20" y1="5" x2="20" y2="25" stroke="#8892a4" stroke-width="2"/>
+              <rect x="10" y="25" width="20" height="60" rx="2" fill="#ff4757"/>
+              <line x1="20" y1="85" x2="20" y2="105" stroke="#8892a4" stroke-width="2"/>
+              <text x="26" y="15" fill="#8892a4" font-size="8" font-family="monospace">high</text>
+              <text x="26" y="55" fill="#ff4757" font-size="8" font-family="monospace">open</text>
+              <text x="26" y="78" fill="#ff4757" font-size="8" font-family="monospace">close</text>
+              <text x="26" y="98" fill="#8892a4" font-size="8" font-family="monospace">low</text>
+            </svg>
+            <div class="cv-label r">🔴 RED<br>Sellers Won</div>
+          </div>
+          <!-- ANATOMY EXPLAINER -->
+          <div style="flex:1;min-width:180px;font-size:.8rem;color:var(--dim);padding:6px 0">
+            <div style="margin-bottom:6px"><span style="color:var(--text)">📌 Parts of a candle:</span></div>
+            <div class="li c">Body = open to close price range</div>
+            <div class="li c">Upper wick = how high price went</div>
+            <div class="li c">Lower wick = how low price went</div>
+            <div class="li g" style="margin-top:6px">Green: price closed ABOVE open</div>
+            <div class="li r">Red: price closed BELOW open</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="blk learn">
+        <div class="blk-lbl">🎓 Learn</div>
+        <div class="li g">Green candle = buyers pushed price up — buyers WIN</div>
+        <div class="li r">Red candle = sellers pushed price down — sellers WIN</div>
+      </div>
+      <div class="blk prac">
+        <div class="blk-lbl">🎮 Practice</div>
+        <div class="li b">Open any chart (TradingView / Zerodha Kite)</div>
+        <div class="li b">Count 20 candles — how many green? How many red?</div>
+      </div>
+      <button class="cbtn" id="btn1" onclick="done(event,1)">Mark Day 1 Complete ✓</button>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day-card" id="c2">
+    <div class="dc-head" onclick="tog(2)">
+      <div class="day-label">DAY 02</div>
+      <div class="day-ttl">Strong vs Weak Candle</div>
+      <div class="dc-check" id="ck2" onclick="done(event,2)"></div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk story">
+        <div class="blk-lbl">📖 Story</div>
+        <p>Big candle = strong warrior 💪 charges forward with power.<br>Small candle = tired warrior 😴 — confused, indecisive.</p>
+      </div>
+
+      <div class="candle-vis">
+        <div class="blk-lbl">👁 Visual — Strong vs Weak Candles</div>
+        <div class="vis-wrap">
+          <!-- STRONG GREEN -->
+          <div class="cv-item">
+            <svg width="36" height="130" class="cv">
+              <line x1="18" y1="8" x2="18" y2="18" stroke="#8892a4" stroke-width="1.5"/>
+              <rect x="8" y="18" width="20" height="85" rx="2" fill="#00e676"/>
+              <line x1="18" y1="103" x2="18" y2="113" stroke="#8892a4" stroke-width="1.5"/>
+            </svg>
+            <div class="cv-label g">STRONG<br>Big body<br>Power!</div>
+          </div>
+          <!-- WEAK GREEN -->
+          <div class="cv-item">
+            <svg width="36" height="130" class="cv">
+              <line x1="18" y1="30" x2="18" y2="52" stroke="#8892a4" stroke-width="1.5"/>
+              <rect x="8" y="52" width="20" height="18" rx="2" fill="#00e676" opacity=".7"/>
+              <line x1="18" y1="70" x2="18" y2="95" stroke="#8892a4" stroke-width="1.5"/>
+            </svg>
+            <div class="cv-label" style="color:#8892a4">WEAK<br>Small body<br>Confusion</div>
+          </div>
+          <!-- STRONG RED -->
+          <div class="cv-item">
+            <svg width="36" height="130" class="cv">
+              <line x1="18" y1="8" x2="18" y2="18" stroke="#8892a4" stroke-width="1.5"/>
+              <rect x="8" y="18" width="20" height="85" rx="2" fill="#ff4757"/>
+              <line x1="18" y1="103" x2="18" y2="113" stroke="#8892a4" stroke-width="1.5"/>
+            </svg>
+            <div class="cv-label r">STRONG<br>Big body<br>Attack!</div>
+          </div>
+          <!-- DOJI -->
+          <div class="cv-item">
+            <svg width="36" height="130" class="cv">
+              <line x1="18" y1="20" x2="18" y2="55" stroke="#8892a4" stroke-width="1.5"/>
+              <rect x="6" y="55" width="24" height="4" rx="1" fill="#8892a4"/>
+              <line x1="18" y1="59" x2="18" y2="100" stroke="#8892a4" stroke-width="1.5"/>
+            </svg>
+            <div class="cv-label gold">DOJI<br>No winner<br>Pause!</div>
+          </div>
+          <div style="flex:1;min-width:180px;font-size:.8rem;color:var(--dim);padding:6px 0">
+            <div class="li g">Big body = lots of movement = strong conviction</div>
+            <div class="li r">Small body = little movement = no clear winner</div>
+            <div class="li go" style="margin-top:6px">Doji = open ≈ close = total confusion</div>
+            <div class="li c" style="margin-top:6px">Tip: Big body candles matter most. Small ones = be careful</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="blk prac">
+        <div class="blk-lbl">🎮 Practice</div>
+        <div class="li b">Open a chart — mark 5 candles with BIG bodies</div>
+        <div class="li b">Now mark 5 candles with SMALL bodies (doji-like)</div>
+        <div class="li b">Notice: big body candles often continue, small ones often reverse</div>
+      </div>
+      <button class="cbtn" id="btn2" onclick="done(event,2)">Mark Day 2 Complete ✓</button>
+    </div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="day-card" id="c3">
+    <div class="dc-head" onclick="tog(3)">
+      <div class="day-label">DAY 03</div>
+      <div class="day-ttl">Wick = Rejection</div>
+      <div class="dc-check" id="ck3" onclick="done(event,3)"></div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk story">
+        <div class="blk-lbl">📖 Story</div>
+        <p>Wick = "attack failed!" Price tried to go somewhere but got PUSHED BACK by the opposite side. A long wick = strong rejection.</p>
+      </div>
+
+      <div class="candle-vis">
+        <div class="blk-lbl">👁 Visual — Wick Types & What They Mean</div>
+        <div class="vis-wrap">
+          <!-- Long upper wick -->
+          <div class="cv-item">
+            <svg width="40" height="140" class="cv">
+              <!-- long top wick -->
+              <line x1="20" y1="5" x2="20" y2="65" stroke="#ff4757" stroke-width="2"/>
+              <!-- body -->
+              <rect x="10" y="65" width="20" height="25" rx="2" fill="#ff4757"/>
+              <!-- short bottom wick -->
+              <line x1="20" y1="90" x2="20" y2="100" stroke="#8892a4" stroke-width="1.5"/>
+              <!-- arrow showing rejection -->
+              <text x="26" y="20" fill="#ff4757" font-size="9" font-family="monospace">↓ sellers</text>
+              <text x="26" y="32" fill="#ff4757" font-size="9" font-family="monospace">rejected</text>
+            </svg>
+            <div class="cv-label r">Long UPPER Wick<br>Sellers rejected<br>buyers at top</div>
+          </div>
+          <!-- Long lower wick (hammer) -->
+          <div class="cv-item">
+            <svg width="40" height="140" class="cv">
+              <!-- short top wick -->
+              <line x1="20" y1="10" x2="20" y2="20" stroke="#8892a4" stroke-width="1.5"/>
+              <!-- body -->
+              <rect x="10" y="20" width="20" height="25" rx="2" fill="#00e676"/>
+              <!-- long bottom wick -->
+              <line x1="20" y1="45" x2="20" y2="120" stroke="#00e676" stroke-width="2"/>
+              <text x="26" y="80" fill="#00e676" font-size="9" font-family="monospace">↑ buyers</text>
+              <text x="26" y="92" fill="#00e676" font-size="9" font-family="monospace">rejected</text>
+            </svg>
+            <div class="cv-label g">Long LOWER Wick<br>Buyers rejected<br>sellers at bottom</div>
+          </div>
+          <!-- Shooting star -->
+          <div class="cv-item">
+            <svg width="40" height="140" class="cv">
+              <line x1="20" y1="5" x2="20" y2="70" stroke="#ff4757" stroke-width="2"/>
+              <rect x="10" y="70" width="20" height="8" rx="2" fill="#ff4757"/>
+              <line x1="20" y1="78" x2="20" y2="85" stroke="#8892a4" stroke-width="1.5"/>
+            </svg>
+            <div class="cv-label r">Shooting Star<br>Very bearish<br>strong rejection</div>
+          </div>
+          <!-- Hammer -->
+          <div class="cv-item">
+            <svg width="40" height="140" class="cv">
+              <line x1="20" y1="10" x2="20" y2="18" stroke="#8892a4" stroke-width="1.5"/>
+              <rect x="10" y="18" width="20" height="8" rx="2" fill="#00e676"/>
+              <line x1="20" y1="26" x2="20" y2="100" stroke="#00e676" stroke-width="2"/>
+            </svg>
+            <div class="cv-label g">Hammer 🔨<br>Very bullish<br>strong rejection</div>
+          </div>
+          <div style="flex:1;min-width:180px;font-size:.8rem;padding:6px 0">
+            <div class="li r">Long upper wick = sellers pushed price DOWN hard</div>
+            <div class="li g">Long lower wick = buyers pushed price UP hard</div>
+            <div class="li go" style="margin-top:6px">The LONGER the wick, the STRONGER the rejection</div>
+            <div class="li c" style="margin-top:6px">Shooting star near a high = danger! Price may fall</div>
+            <div class="li c">Hammer near a low = opportunity! Price may rise</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="blk prac">
+        <div class="blk-lbl">🎮 Practice</div>
+        <div class="li b">Find 3 candles with long UPPER wicks — what happened after?</div>
+        <div class="li b">Find 3 candles with long LOWER wicks — what happened after?</div>
+        <div class="li b">Find a Shooting Star or Hammer pattern</div>
+      </div>
+      <button class="cbtn" id="btn3" onclick="done(event,3)">Mark Day 3 Complete ✓</button>
+    </div>
+  </div>
+
+  <!-- DAY 4 -->
+  <div class="day-card" id="c4">
+    <div class="dc-head" onclick="tog(4)">
+      <div class="day-label">DAY 04</div>
+      <div class="day-ttl">Close Power</div>
+      <div class="dc-check" id="ck4" onclick="done(event,4)"></div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk story">
+        <div class="blk-lbl">📖 Story</div>
+        <p>WHERE a candle closes tells you who is truly in control. Closing near the HIGH means buyers are still STRONG. Closing near the LOW means sellers are still STRONG.</p>
+      </div>
+
+      <div class="candle-vis">
+        <div class="blk-lbl">👁 Visual — Close Position = Power Level</div>
+        <div class="vis-wrap">
+          <!-- Close near high - very bullish -->
+          <div class="cv-item">
+            <svg width="40" height="120" class="cv">
+              <line x1="20" y1="5" x2="20" y2="12" stroke="#8892a4" stroke-width="1.5"/>
+              <rect x="10" y="12" width="20" height="70" rx="2" fill="#00e676"/>
+              <line x1="20" y1="82" x2="20" y2="100" stroke="#8892a4" stroke-width="1.5"/>
+              <!-- close marker -->
+              <line x1="5" y1="14" x2="35" y2="14" stroke="#00e676" stroke-width="1" stroke-dasharray="2"/>
+              <text x="-15" y="17" fill="#00e676" font-size="7" font-family="monospace">close≈high</text>
+            </svg>
+            <div class="cv-label g">Close near HIGH<br>💪 Very bullish<br>Buyers dominate</div>
+          </div>
+          <!-- Close in middle -->
+          <div class="cv-item">
+            <svg width="40" height="120" class="cv">
+              <line x1="20" y1="5" x2="20" y2="20" stroke="#8892a4" stroke-width="1.5"/>
+              <rect x="10" y="20" width="20" height="60" rx="2" fill="#00e676" opacity=".6"/>
+              <line x1="20" y1="80" x2="20" y2="100" stroke="#8892a4" stroke-width="1.5"/>
+              <line x1="5" y1="50" x2="35" y2="50" stroke="#ffd32a" stroke-width="1" stroke-dasharray="2"/>
+              <text x="-12" y="53" fill="#ffd32a" font-size="7" font-family="monospace">mid</text>
+            </svg>
+            <div class="cv-label gold">Close at MID<br>Neutral<br>No clear winner</div>
+          </div>
+          <!-- Close near low - bearish -->
+          <div class="cv-item">
+            <svg width="40" height="120" class="cv">
+              <line x1="20" y1="5" x2="20" y2="20" stroke="#8892a4" stroke-width="1.5"/>
+              <rect x="10" y="20" width="20" height="70" rx="2" fill="#ff4757"/>
+              <line x1="20" y1="90" x2="20" y2="100" stroke="#8892a4" stroke-width="1.5"/>
+              <line x1="5" y1="88" x2="35" y2="88" stroke="#ff4757" stroke-width="1" stroke-dasharray="2"/>
+              <text x="-12" y="91" fill="#ff4757" font-size="7" font-family="monospace">close≈low</text>
+            </svg>
+            <div class="cv-label r">Close near LOW<br>💪 Very bearish<br>Sellers dominate</div>
+          </div>
+          <div style="flex:1;min-width:160px;font-size:.8rem;padding:6px 0">
+            <div class="li g">Close at top of range = buyers were strong ALL day</div>
+            <div class="li r">Close at bottom of range = sellers were strong ALL day</div>
+            <div class="li go" style="margin-top:6px">Close in middle = fight is equal, be careful</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="blk prac">
+        <div class="blk-lbl">🎮 Practice</div>
+        <div class="li b">Find 5 candles that closed near their HIGH</div>
+        <div class="li b">Find 5 candles that closed near their LOW</div>
+        <div class="li b">Did the next candle continue in the same direction?</div>
+      </div>
+      <button class="cbtn" id="btn4" onclick="done(event,4)">Mark Day 4 Complete ✓</button>
+    </div>
+  </div>
+
+  <!-- DAY 5 -->
+  <div class="day-card" id="c5">
+    <div class="dc-head" onclick="tog(5)">
+      <div class="day-label">DAY 05</div>
+      <div class="day-ttl">Combine Candle Psychology</div>
+      <div class="dc-check" id="ck5" onclick="done(event,5)"></div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk story">
+        <div class="blk-lbl">📖 Story — Read a Chart Like a Movie</div>
+        <p>Now combine everything: size + wick + close position. Each candle is a sentence. Together they tell a story.</p>
+      </div>
+
+      <div class="candle-vis">
+        <div class="blk-lbl">👁 Visual — A Mini Story (5 candles)</div>
+        <div class="chart-demo">
+          <div class="chart-title">READ THIS STORY LEFT → RIGHT</div>
+          <svg width="100%" height="140" viewBox="0 0 420 140" style="display:block">
+            <!-- Background grid lines -->
+            <line x1="0" y1="40" x2="420" y2="40" stroke="#1a1e28" stroke-width="1"/>
+            <line x1="0" y1="80" x2="420" y2="80" stroke="#1a1e28" stroke-width="1"/>
+            <line x1="0" y1="120" x2="420" y2="120" stroke="#1a1e28" stroke-width="1"/>
+
+            <!-- Candle 1: Big red (seller attack) -->
+            <line x1="42" y1="10" x2="42" y2="20" stroke="#8892a4" stroke-width="1.5"/>
+            <rect x="32" y="20" width="20" height="75" rx="2" fill="#ff4757"/>
+            <line x1="42" y1="95" x2="42" y2="105" stroke="#8892a4" stroke-width="1.5"/>
+            <text x="10" y="128" fill="#ff4757" font-size="9" font-family="monospace">① Attack</text>
+
+            <!-- Candle 2: Small red (continuation) -->
+            <line x1="102" y1="50" x2="102" y2="60" stroke="#8892a4" stroke-width="1.5"/>
+            <rect x="92" y="60" width="20" height="25" rx="2" fill="#ff4757" opacity=".7"/>
+            <line x1="102" y1="85" x2="102" y2="95" stroke="#8892a4" stroke-width="1.5"/>
+            <text x="76" y="128" fill="#8892a4" font-size="9" font-family="monospace">② Cont.</text>
+
+            <!-- Candle 3: Doji (rest) -->
+            <line x1="162" y1="55" x2="162" y2="78" stroke="#8892a4" stroke-width="1.5"/>
+            <rect x="152" y="78" width="20" height="4" rx="1" fill="#8892a4"/>
+            <line x1="162" y1="82" x2="162" y2="108" stroke="#8892a4" stroke-width="1.5"/>
+            <text x="142" y="128" fill="#ffd32a" font-size="9" font-family="monospace">③ Rest</text>
+
+            <!-- Candle 4: Small green (buyers try) -->
+            <line x1="222" y1="65" x2="222" y2="72" stroke="#8892a4" stroke-width="1.5"/>
+            <rect x="212" y="72" width="20" height="18" rx="2" fill="#00e676" opacity=".6"/>
+            <line x1="222" y1="90" x2="222" y2="100" stroke="#8892a4" stroke-width="1.5"/>
+            <text x="202" y="128" fill="#8892a4" font-size="9" font-family="monospace">④ Weak↑</text>
+
+            <!-- Candle 5: Big red again (sellers win) -->
+            <line x1="302" y1="55" x2="302" y2="65" stroke="#8892a4" stroke-width="1.5"/>
+            <rect x="282" y="65" width="40" height="60" rx="2" fill="#ff4757"/>
+            <line x1="302" y1="125" x2="302" y2="132" stroke="#8892a4" stroke-width="1.5"/>
+            <text x="268" y="145" fill="#ff4757" font-size="9" font-family="monospace" dy="-8">⑤ Sellers WIN!</text>
+
+            <!-- Arrow showing overall direction -->
+            <path d="M 42 60 Q 180 30 302 90" stroke="#ff4757" stroke-width="1" fill="none" stroke-dasharray="3 3" opacity=".4"/>
+          </svg>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:5px;font-size:.8rem;padding:4px 0">
+          <div class="li r"><b>① Big red candle</b> — Sellers ATTACK hard, close near low</div>
+          <div class="li r"><b>② Small red candle</b> — Sellers still going, but losing energy</div>
+          <div class="li go"><b>③ Doji</b> — Nobody wins, everyone is resting</div>
+          <div class="li g"><b>④ Small green</b> — Buyers try to push up, but body is small = weak</div>
+          <div class="li r"><b>⑤ Big red again</b> — Sellers come back STRONGER, buyers give up</div>
+        </div>
+      </div>
+
+      <div class="blk prac">
+        <div class="blk-lbl">🎮 Practice</div>
+        <div class="li b">Pick any 5-candle section on a real chart</div>
+        <div class="li b">Write a story: "First the buyers attacked... then sellers..."</div>
+        <div class="li b">Do this 3 times on different sections</div>
+      </div>
+      <button class="cbtn" id="btn5" onclick="done(event,5)">Mark Day 5 Complete ✓</button>
+    </div>
+  </div>
+</div><!-- end phase 1 -->
+
+<!-- ════════════ PHASE 2 ════════════ -->
+<div class="phase-sec" id="ph2" data-ps="2">
+  <div class="phase-hdr" style="--ph:var(--gold)">
+    <div class="icon">📈</div>
+    <div><h2>TREND</h2><p>Identify who controls the market — Day 6 to 8</p></div>
+    <div class="days-tag">Day 6–8</div>
+  </div>
+
+  <!-- DAY 6 -->
+  <div class="day-card" id="c6">
+    <div class="dc-head" onclick="tog(6)">
+      <div class="day-label">DAY 06</div>
+      <div class="day-ttl">Trend Basics</div>
+      <div class="dc-check" id="ck6" onclick="done(event,6)"></div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk story">
+        <div class="blk-lbl">📖 Story</div>
+        <p>The market is always walking in a direction 🚶 — up, down, or sideways. Your job is to SEE the direction, then follow it. Never fight it.</p>
+      </div>
+
+      <div class="candle-vis">
+        <div class="blk-lbl">👁 Visual — Uptrend vs Downtrend vs Sideways</div>
+        <!-- UPTREND -->
+        <div class="chart-demo" style="margin-bottom:10px">
+          <div class="chart-title">⬆ UPTREND — Higher Highs &amp; Higher Lows</div>
+          <svg width="100%" height="110" viewBox="0 0 420 110" style="display:block">
+            <line x1="0" y1="30" x2="420" y2="30" stroke="#1a1e28" stroke-width="1"/>
+            <line x1="0" y1="60" x2="420" y2="60" stroke="#1a1e28" stroke-width="1"/>
+            <line x1="0" y1="90" x2="420" y2="90" stroke="#1a1e28" stroke-width="1"/>
+            <!-- Uptrend candles: staircase up -->
+            <!-- c1 -->
+            <line x1="30" y1="78" x2="30" y2="68" stroke="#8892a4" stroke-width="1.5"/>
+            <rect x="22" y="55" width="16" height="22" rx="2" fill="#00e676"/>
+            <line x1="30" y1="77" x2="30" y2="82" stroke="#8892a4" stroke-width="1.5"/>
+            <!-- c2 small red pullback -->
+            <line x1="68" y1="52" x2="68" y2="45" stroke="#8892a4" stroke-width="1.5"/>
+            <rect x="60" y="55" width="16" height="15" rx="2" fill="#ff4757" opacity=".7"/>
+            <line x1="68" y1="70" x2="68" y2="75" stroke="#8892a4" stroke-width="1.5"/>
+            <!-- c3 big green -->
+            <line x1="106" y1="35" x2="106" y2="25" stroke="#8892a4" stroke-width="1.5"/>
+            <rect x="98" y="35" width="16" height="30" rx="2" fill="#00e676"/>
+            <line x1="106" y1="65" x2="106" y2="72" stroke="#8892a4" stroke-width="1.5"/>
+            <!-- c4 small red -->
+            <line x1="144" y1="30" x2="144" y2="25" stroke="#8892a4" stroke-width="1.5"/>
+            <rect x="136" y="30" width="16" height="14" rx="2" fill="#ff4757" opacity=".7"/>
+            <line x1="144" y1="44" x2="144" y2="50" stroke="#8892a4" stroke-width="1.5"/>
+            <!-- c5 big green -->
+            <line x1="182" y1="12" x2="182" y2="8" stroke="#8892a4" stroke-width="1.5"/>
+            <rect x="174" y="12" width="16" height="28" rx="2" fill="#00e676"/>
+            <line x1="182" y1="40" x2="182" y2="48" stroke="#8892a4" stroke-width="1.5"/>
+            <!-- c6 -->
+            <line x1="220" y1="8" x2="220" y2="4" stroke="#8892a4" stroke-width="1.5"/>
+            <rect x="212" y="8" width="16" height="12" rx="2" fill="#ff4757" opacity=".6"/>
+            <line x1="220" y1="20" x2="220" y2="28" stroke="#8892a4" stroke-width="1.5"/>
+            <!-- c7 -->
+            <rect x="250" y="5" width="16" height="22" rx="2" fill="#00e676"/>
+            <line x1="258" y1="5" x2="258" y2="2" stroke="#8892a4" stroke-width="1.5"/>
+            <line x1="258" y1="27" x2="258" y2="34" stroke="#8892a4" stroke-width="1.5"/>
+            <!-- HH HL labels -->
+            <text x="22" y="50" fill="#00e676" font-size="8" font-family="monospace">HL</text>
+            <text x="98" y="30" fill="#00e676" font-size="8" font-family="monospace">HH</text>
+            <text x="136" y="22" fill="#00e676" font-size="8" font-family="monospace">HL</text>
+            <text x="174" y="6" fill="#00e676" font-size="8" font-family="monospace">HH</text>
+            <text x="212" y="3" fill="#00e676" font-size="8" font-family="monospace">HL</text>
+            <!-- trend arrow -->
+            <path d="M 10 95 L 390 15" stroke="#00e676" stroke-width="1.5" stroke-dasharray="6 3" opacity=".4"/>
+            <text x="300" y="105" fill="#00e676" font-size="9" font-family="monospace">HH=Higher High | HL=Higher Low</text>
+          </svg>
+        </div>
+        <!-- DOWNTREND -->
+        <div class="chart-demo" style="margin-bottom:10px">
+          <div class="chart-title">⬇ DOWNTREND — Lower Highs &amp; Lower Lows</div>
+          <svg width="100%" height="110" viewBox="0 0 420 110" style="display:block">
+            <line x1="0" y1="30" x2="420" y2="30" stroke="#1a1e28" stroke-width="1"/>
+            <line x1="0" y1="60" x2="420" y2="60" stroke="#1a1e28" stroke-width="1"/>
+            <line x1="0" y1="90" x2="420" y2="90" stroke="#1a1e28" stroke-width="1"/>
+            <!-- Downtrend candles -->
+            <line x1="30" y1="5" x2="30" y2="15" stroke="#8892a4" stroke-width="1.5"/>
+            <rect x="22" y="15" width="16" height="25" rx="2" fill="#ff4757"/>
+            <line x1="30" y1="40" x2="30" y2="48" stroke="#8892a4" stroke-width="1.5"/>
+            <line x1="68" y1="30" x2="68" y2="22" stroke="#8892a4" stroke-width="1.5"/>
+            <rect x="60" y="30" width="16" height="12" rx="2" fill="#00e676" opacity=".6"/>
+            <line x1="68" y1="42" x2="68" y2="50" stroke="#8892a4" stroke-width="1.5"/>
+            <line x1="106" y1="38" x2="106" y2="30" stroke="#8892a4" stroke-width="1.5"/>
+            <rect x="98" y="48" width="16" height="28" rx="2" fill="#ff4757"/>
+            <line x1="106" y1="76" x2="106" y2="85" stroke="#8892a4" stroke-width="1.5"/>
+            <line x1="144" y1="58" x2="144" y2="50" stroke="#8892a4" stroke-width="1.5"/>
+            <rect x="136" y="58" width="16" height="12" rx="2" fill="#00e676" opacity=".6"/>
+            <line x1="144" y1="70" x2="144" y2="78" stroke="#8892a4" stroke-width="1.5"/>
+            <line x1="182" y1="63" x2="182" y2="55" stroke="#8892a4" stroke-width="1.5"/>
+            <rect x="174" y="65" width="16" height="30" rx="2" fill="#ff4757"/>
+            <line x1="182" y1="95" x2="182" y2="103" stroke="#8892a4" stroke-width="1.5"/>
+            <!-- Labels -->
+            <text x="22" y="10" fill="#ff4757" font-size="8" font-family="monospace">LH</text>
+            <text x="98" y="44" fill="#ff4757" font-size="8" font-family="monospace">LL</text>
+            <text x="136" y="46" fill="#ff4757" font-size="8" font-family="monospace">LH</text>
+            <text x="174" y="59" fill="#ff4757" font-size="8" font-family="monospace">LL</text>
+            <path d="M 10 10 L 390 95" stroke="#ff4757" stroke-width="1.5" stroke-dasharray="6 3" opacity=".4"/>
+            <text x="280" y="105" fill="#ff4757" font-size="9" font-family="monospace">LH=Lower High | LL=Lower Low</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="blk learn">
+        <div class="blk-lbl">🎓 Learn</div>
+        <div class="li g">Uptrend = price makes HIGHER highs + HIGHER lows (staircase up)</div>
+        <div class="li r">Downtrend = price makes LOWER highs + LOWER lows (staircase down)</div>
+        <div class="li go">Sideways = no clear pattern, prices go back and forth</div>
+      </div>
+      <div class="blk prac">
+        <div class="blk-lbl">🎮 Practice</div>
+        <div class="li b">Open 5 different charts and identify: Up / Down / Sideways?</div>
+        <div class="li b">Mark the Higher Highs and Higher Lows on one uptrend</div>
+      </div>
+      <button class="cbtn" id="btn6" onclick="done(event,6)">Mark Day 6 Complete ✓</button>
+    </div>
+  </div>
+
+  <!-- DAY 7 -->
+  <div class="day-card" id="c7">
+    <div class="dc-head" onclick="tog(7)">
+      <div class="day-label">DAY 07</div>
+      <div class="day-ttl">Who is Boss?</div>
+      <div class="dc-check" id="ck7" onclick="done(event,7)"></div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk story">
+        <div class="blk-lbl">📖 Story</div>
+        <p>In an uptrend, BUYERS are the boss. In a downtrend, SELLERS are the boss. Always trade WITH the boss. The boss usually wins.</p>
+      </div>
+      <div class="blk learn">
+        <div class="blk-lbl">🎓 Simple Rule</div>
+        <div class="li g">In uptrend → only look for BUY opportunities</div>
+        <div class="li r">In downtrend → only look for SELL opportunities</div>
+        <div class="li go">In sideways → avoid trading (no clear boss)</div>
+      </div>
+      <div class="blk prac">
+        <div class="blk-lbl">🎮 Practice</div>
+        <div class="li b">For 5 charts: who is the boss? Buyers or sellers?</div>
+        <div class="li b">Write it down: "On this chart, sellers are boss because..."</div>
+      </div>
+      <button class="cbtn" id="btn7" onclick="done(event,7)">Mark Day 7 Complete ✓</button>
+    </div>
+  </div>
+
+  <!-- DAY 8 -->
+  <div class="day-card" id="c8">
+    <div class="dc-head" onclick="tog(8)">
+      <div class="day-label">DAY 08</div>
+      <div class="day-ttl">Don't Fight the Boss</div>
+      <div class="dc-check" id="ck8" onclick="done(event,8)"></div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="candle-vis">
+        <div class="blk-lbl">👁 Visual — Right vs Wrong Trade Direction</div>
+        <div class="chart-demo">
+          <div class="chart-title">DOWNTREND — Only sell. Never buy against it.</div>
+          <svg width="100%" height="120" viewBox="0 0 420 120" style="display:block">
+            <line x1="0" y1="40" x2="420" y2="40" stroke="#1a1e28" stroke-width="1"/>
+            <line x1="0" y1="80" x2="420" y2="80" stroke="#1a1e28" stroke-width="1"/>
+            <!-- downtrend candles -->
+            <rect x="20" y="10" width="16" height="28" rx="2" fill="#ff4757"/>
+            <rect x="56" y="14" width="16" height="18" rx="2" fill="#00e676" opacity=".5"/>
+            <rect x="92" y="26" width="16" height="32" rx="2" fill="#ff4757"/>
+            <rect x="128" y="32" width="16" height="14" rx="2" fill="#00e676" opacity=".5"/>
+            <rect x="164" y="42" width="16" height="34" rx="2" fill="#ff4757"/>
+            <rect x="200" y="55" width="16" height="12" rx="2" fill="#00e676" opacity=".5"/>
+            <rect x="236" y="60" width="16" height="36" rx="2" fill="#ff4757"/>
+            <!-- trend arrow -->
+            <path d="M 10 15 L 380 100" stroke="#ff4757" stroke-width="1.5" stroke-dasharray="6 3" opacity=".5"/>
+            <!-- WRONG buy arrow -->
+            <path d="M 320 85 L 380 50" stroke="#ff4757" stroke-width="2" marker-end="url(#arr)"/>
+            <rect x="295" y="82" width="100" height="18" rx="3" fill="rgba(255,71,87,.2)" stroke="#ff4757" stroke-width="1"/>
+            <text x="300" y="94" fill="#ff4757" font-size="9" font-family="monospace">✗ WRONG: Buy here</text>
+            <!-- RIGHT sell arrow -->
+            <path d="M 320 40 L 380 75" stroke="#00e676" stroke-width="2"/>
+            <rect x="290" y="25" width="110" height="18" rx="3" fill="rgba(0,230,118,.1)" stroke="#00e676" stroke-width="1"/>
+            <text x="295" y="37" fill="#00e676" font-size="9" font-family="monospace">✓ RIGHT: Sell here</text>
+          </svg>
+        </div>
+      </div>
+      <div class="blk rules">
+        <div class="blk-lbl">🚫 Golden Rules</div>
+        <div class="li rule">Don't BUY in a downtrend — fighting the boss</div>
+        <div class="li rule">Don't SELL in an uptrend — fighting the boss</div>
+        <div class="li rule">Don't trade in sideways — no boss, no direction</div>
+      </div>
+      <div class="blk prac">
+        <div class="blk-lbl">🎮 Practice</div>
+        <div class="li b">Find 3 charts where someone might buy against a downtrend</div>
+        <div class="li b">See what happened: did the price fall anyway?</div>
+      </div>
+      <button class="cbtn" id="btn8" onclick="done(event,8)">Mark Day 8 Complete ✓</button>
+    </div>
+  </div>
+</div><!-- end phase 2 -->
+
+<!-- ════════════ PHASE 3 ════════════ -->
+<div class="phase-sec" id="ph3" data-ps="3">
+  <div class="phase-hdr" style="--ph:var(--blue)">
+    <div class="icon">🔵</div>
+    <div><h2>PATTERN</h2><p>Impulse → Pullback → Break — Day 9 to 12</p></div>
+    <div class="days-tag">Day 9–12</div>
+  </div>
+
+  <!-- DAY 9 -->
+  <div class="day-card" id="c9">
+    <div class="dc-head" onclick="tog(9)">
+      <div class="day-label">DAY 09</div>
+      <div class="day-ttl">Impulse</div>
+      <div class="dc-check" id="ck9" onclick="done(event,9)"></div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk story">
+        <div class="blk-lbl">📖 Story</div>
+        <p>Impulse = a strong ATTACK. Multiple big candles all moving in one direction. This is the trend showing its power. It moves FAST.</p>
+      </div>
+      <div class="candle-vis">
+        <div class="blk-lbl">👁 Visual — Bullish Impulse Move</div>
+        <div class="chart-demo">
+          <div class="chart-title">IMPULSE — Big candles, all green, moving up fast</div>
+          <svg width="100%" height="100" viewBox="0 0 380 100" style="display:block">
+            <line x1="0" y1="33" x2="380" y2="33" stroke="#1a1e28" stroke-width="1"/>
+            <line x1="0" y1="66" x2="380" y2="66" stroke="#1a1e28" stroke-width="1"/>
+            <!-- baseline small candles -->
+            <rect x="10" y="68" width="14" height="12" rx="2" fill="#8892a4" opacity=".3"/>
+            <rect x="30" y="65" width="14" height="10" rx="2" fill="#8892a4" opacity=".3"/>
+            <rect x="50" y="63" width="14" height="12" rx="2" fill="#8892a4" opacity=".3"/>
+            <!-- IMPULSE starts -->
+            <line x1="82" y1="55" x2="82" y2="60" stroke="#00e676" stroke-width="1.5"/>
+            <rect x="74" y="40" width="16" height="28" rx="2" fill="#00e676"/>
+            <line x1="82" y1="68" x2="82" y2="72" stroke="#00e676" stroke-width="1.5"/>
+
+            <line x1="112" y1="25" x2="112" y2="32" stroke="#00e676" stroke-width="1.5"/>
+            <rect x="104" y="12" width="16" height="30" rx="2" fill="#00e676"/>
+            <line x1="112" y1="42" x2="112" y2="48" stroke="#00e676" stroke-width="1.5"/>
+
+            <line x1="142" y1="8" x2="142" y2="14" stroke="#00e676" stroke-width="1.5"/>
+            <rect x="134" y="4" width="16" height="22" rx="2" fill="#00e676"/>
+            <line x1="142" y1="26" x2="142" y2="32" stroke="#00e676" stroke-width="1.5"/>
+
+            <!-- bracket -->
+            <rect x="65" y="2" width="102" height="78" rx="4" fill="none" stroke="#00e676" stroke-width="1.5" stroke-dasharray="4 2"/>
+            <text x="68" y="96" fill="#00e676" font-size="10" font-family="monospace">← IMPULSE: 3 big green candles →</text>
+          </svg>
+        </div>
+        <div style="font-size:.8rem;margin-top:6px">
+          <div class="li g">All candles are BIG</div>
+          <div class="li g">All candles close near their HIGH</div>
+          <div class="li g">Price moves a LOT in a short time</div>
+          <div class="li go" style="margin-top:6px">⚠️ Don't CHASE an impulse — it's already moving. Wait for pullback.</div>
+        </div>
+      </div>
+      <div class="blk prac">
+        <div class="blk-lbl">🎮 Practice</div>
+        <div class="li b">Find and mark 5 impulse moves on charts</div>
+        <div class="li b">They can be up (bullish) or down (bearish)</div>
+      </div>
+      <button class="cbtn" id="btn9" onclick="done(event,9)">Mark Day 9 Complete ✓</button>
+    </div>
+  </div>
+
+  <!-- DAY 10 -->
+  <div class="day-card" id="c10">
+    <div class="dc-head" onclick="tog(10)">
+      <div class="day-label">DAY 10</div>
+      <div class="day-ttl">Pullback</div>
+      <div class="dc-check" id="ck10" onclick="done(event,10)"></div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk story">
+        <div class="blk-lbl">📖 Story</div>
+        <p>After the impulse attack, the warriors REST 😴 — price moves back a little in the OPPOSITE direction. This is NOT a reversal. It's a breather. Smart traders WAIT for this.</p>
+      </div>
+      <div class="candle-vis">
+        <div class="blk-lbl">👁 Visual — Impulse then Pullback</div>
+        <div class="chart-demo">
+          <div class="chart-title">PULLBACK — small opposite candles after big move</div>
+          <svg width="100%" height="120" viewBox="0 0 400 120" style="display:block">
+            <line x1="0" y1="40" x2="400" y2="40" stroke="#1a1e28" stroke-width="1"/>
+            <line x1="0" y1="80" x2="400" y2="80" stroke="#1a1e28" stroke-width="1"/>
+            <!-- Impulse up -->
+            <rect x="10" y="80" width="16" height="25" rx="2" fill="#00e676"/>
+            <rect x="32" y="60" width="16" height="28" rx="2" fill="#00e676"/>
+            <rect x="54" y="38" width="16" height="28" rx="2" fill="#00e676"/>
+            <!-- label impulse -->
+            <rect x="8" y="35" width="66" height="78" rx="4" fill="none" stroke="#00e676" stroke-width="1" stroke-dasharray="3 2" opacity=".6"/>
+            <text x="10" y="25" fill="#00e676" font-size="8" font-family="monospace">IMPULSE</text>
+            <!-- Pullback: small red candles moving down slightly -->
+            <rect x="84" y="47" width="16" height="12" rx="2" fill="#ff4757" opacity=".7"/>
+            <rect x="106" y="53" width="16" height="10" rx="2" fill="#ff4757" opacity=".7"/>
+            <rect x="128" y="52" width="16" height="8" rx="2" fill="#ff4757" opacity=".5"/>
+            <!-- label pullback -->
+            <rect x="82" y="44" width="68" height="28" rx="4" fill="none" stroke="#ffd32a" stroke-width="1" stroke-dasharray="3 2"/>
+            <text x="84" y="35" fill="#ffd32a" font-size="8" font-family="monospace">PULLBACK</text>
+            <!-- Enter zone -->
+            <line x1="148" y1="35" x2="148" y2="100" stroke="#00e676" stroke-width="1.5" stroke-dasharray="4 2"/>
+            <text x="152" y="45" fill="#00e676" font-size="8" font-family="monospace">↑ ENTER</text>
+            <text x="152" y="55" fill="#00e676" font-size="8" font-family="monospace">HERE!</text>
+            <!-- next up candles -->
+            <rect x="168" y="30" width="16" height="32" rx="2" fill="#00e676"/>
+            <rect x="190" y="15" width="16" height="28" rx="2" fill="#00e676"/>
+          </svg>
+        </div>
+        <div style="font-size:.8rem;margin-top:6px">
+          <div class="li go">Pullback = small candles, going opposite to trend</div>
+          <div class="li go">Pullback is where you WAIT to enter</div>
+          <div class="li r">⚠️ If pullback candles become BIG, maybe the trend reversed — be careful</div>
+        </div>
+      </div>
+      <div class="blk prac">
+        <div class="blk-lbl">🎮 Practice</div>
+        <div class="li b">After each impulse you found yesterday, find the pullback</div>
+        <div class="li b">Are the pullback candles small? Good. Big? Be careful.</div>
+      </div>
+      <button class="cbtn" id="btn10" onclick="done(event,10)">Mark Day 10 Complete ✓</button>
+    </div>
+  </div>
+
+  <!-- DAY 11 -->
+  <div class="day-card" id="c11">
+    <div class="dc-head" onclick="tog(11)">
+      <div class="day-label">DAY 11</div>
+      <div class="day-ttl">Break (Continuation)</div>
+      <div class="dc-check" id="ck11" onclick="done(event,11)"></div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk story">
+        <div class="blk-lbl">📖 Story</div>
+        <p>After the rest, the trend attacks AGAIN. A strong candle appears at the end of the pullback, breaking in the trend direction. THIS is your entry signal!</p>
+      </div>
+      <div class="blk learn">
+        <div class="blk-lbl">🎓 Entry Signal</div>
+        <div class="li g">A strong candle (big body, close near high/low) appears</div>
+        <div class="li g">It breaks in the direction of the main trend</div>
+        <div class="li g">This confirms the pullback is over — trend continues!</div>
+      </div>
+      <div class="blk prac">
+        <div class="blk-lbl">🎮 Practice</div>
+        <div class="li b">Mark continuation candles that appear after pullbacks</div>
+        <div class="li b">Check: is the candle big? Does it close in the trend direction?</div>
+      </div>
+      <button class="cbtn" id="btn11" onclick="done(event,11)">Mark Day 11 Complete ✓</button>
+    </div>
+  </div>
+
+  <!-- DAY 12 -->
+  <div class="day-card" id="c12">
+    <div class="dc-head" onclick="tog(12)">
+      <div class="day-label">DAY 12</div>
+      <div class="day-ttl">Combine the Full Pattern</div>
+      <div class="dc-check" id="ck12" onclick="done(event,12)"></div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="candle-vis">
+        <div class="blk-lbl">👁 Visual — Full Pattern: Impulse → Pullback → Break</div>
+        <div class="chart-demo">
+          <div class="chart-title">THE COMPLETE SETUP — This is what you look for every day</div>
+          <svg width="100%" height="140" viewBox="0 0 460 140" style="display:block">
+            <line x1="0" y1="45" x2="460" y2="45" stroke="#1a1e28" stroke-width="1"/>
+            <line x1="0" y1="90" x2="460" y2="90" stroke="#1a1e28" stroke-width="1"/>
+            <!-- Phase 1: Impulse -->
+            <rect x="10" y="88" width="16" height="22" rx="2" fill="#00e676"/>
+            <rect x="30" y="72" width="16" height="28" rx="2" fill="#00e676"/>
+            <rect x="50" y="50" width="16" height="32" rx="2" fill="#00e676"/>
+            <rect x="8" y="47" width="62" height="68" rx="4" fill="none" stroke="#00e676" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <text x="12" y="38" fill="#00e676" font-size="9" font-family="monospace" font-weight="bold">① IMPULSE</text>
+
+            <!-- Phase 2: Pullback -->
+            <rect x="84" y="62" width="16" height="12" rx="2" fill="#ff4757" opacity=".6"/>
+            <rect x="106" y="68" width="16" height="10" rx="2" fill="#ff4757" opacity=".6"/>
+            <rect x="128" y="65" width="16" height="8" rx="2" fill="#ff4757" opacity=".5"/>
+            <rect x="82" y="58" width="68" height="27" rx="4" fill="none" stroke="#ffd32a" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <text x="84" y="49" fill="#ffd32a" font-size="9" font-family="monospace" font-weight="bold">② PULLBACK</text>
+
+            <!-- Entry arrow -->
+            <line x1="155" y1="40" x2="155" y2="110" stroke="#00e676" stroke-width="2" stroke-dasharray="5 3"/>
+
+            <!-- Phase 3: Break / entry candle -->
+            <line x1="172" y1="38" x2="172" y2="44" stroke="#00e676" stroke-width="1.5"/>
+            <rect x="164" y="44" width="16" height="30" rx="2" fill="#00e676"/>
+            <line x1="172" y1="74" x2="172" y2="80" stroke="#00e676" stroke-width="1.5"/>
+            <rect x="184" y="28" width="16" height="26" rx="2" fill="#00e676"/>
+            <rect x="204" y="14" width="16" height="24" rx="2" fill="#00e676"/>
+            <rect x="162" y="12" width="62" height="73" rx="4" fill="none" stroke="#3d8bff" stroke-width="1.5" stroke-dasharray="4 3"/>
+            <text x="163" y="5" fill="#3d8bff" font-size="9" font-family="monospace" font-weight="bold">③ BREAK → ENTER!</text>
+
+            <!-- Enter label -->
+            <text x="140" y="125" fill="#00e676" font-size="9" font-family="monospace">↑ Your</text>
+            <text x="140" y="136" fill="#00e676" font-size="9" font-family="monospace">Entry</text>
+
+            <!-- repeating pattern arrow -->
+            <path d="M 240 50 Q 280 30 320 55 Q 360 80 380 40" stroke="#8892a4" stroke-width="1" fill="none" stroke-dasharray="3 3" opacity=".5"/>
+            <text x="240" y="100" fill="#8892a4" font-size="8" font-family="monospace" opacity=".7">Pattern repeats over and over...</text>
+          </svg>
+        </div>
+      </div>
+      <div class="blk prac">
+        <div class="blk-lbl">🎮 Practice</div>
+        <div class="li b">Find the FULL pattern (Impulse + Pullback + Break) on a real chart</div>
+        <div class="li b">Mark all 3 stages with different colors</div>
+        <div class="li b">Find 3 examples of this pattern</div>
+      </div>
+      <button class="cbtn" id="btn12" onclick="done(event,12)">Mark Day 12 Complete ✓</button>
+    </div>
+  </div>
+</div><!-- end phase 3 -->
+
+<!-- ════════════ PHASE 4 ════════════ -->
+<div class="phase-sec" id="ph4" data-ps="4">
+  <div class="phase-hdr" style="--ph:var(--purple)">
+    <div class="icon">🟣</div>
+    <div><h2>MARKET BEHAVIOR</h2><p>Traps, confusion zones, and real moves — Day 13 to 15</p></div>
+    <div class="days-tag">Day 13–15</div>
+  </div>
+
+  <!-- DAY 13 -->
+  <div class="day-card" id="c13">
+    <div class="dc-head" onclick="tog(13)">
+      <div class="day-label">DAY 13</div>
+      <div class="day-ttl">Trap</div>
+      <div class="dc-check" id="ck13" onclick="done(event,13)"></div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk story">
+        <div class="blk-lbl">📖 Story</div>
+        <p>The market tricks emotional traders 😈 — it makes a fast, sudden move to lure them in, then REVERSES. The trap candle looks exciting but it's a fake.</p>
+      </div>
+      <div class="candle-vis">
+        <div class="blk-lbl">👁 Visual — Bull Trap (fake breakout, then drop)</div>
+        <div class="chart-demo">
+          <div class="chart-title">TRAP — Price spikes up, emotional traders buy, then it falls</div>
+          <svg width="100%" height="120" viewBox="0 0 400 120" style="display:block">
+            <line x1="0" y1="40" x2="400" y2="40" stroke="#1a1e28" stroke-width="1"/>
+            <line x1="0" y1="80" x2="400" y2="80" stroke="#1a1e28" stroke-width="1"/>
+            <!-- Normal candles -->
+            <rect x="10" y="62" width="14" height="18" rx="2" fill="#8892a4" opacity=".4"/>
+            <rect x="30" y="60" width="14" height="20" rx="2" fill="#8892a4" opacity=".4"/>
+            <rect x="50" y="62" width="14" height="17" rx="2" fill="#8892a4" opacity=".4"/>
+            <!-- Resistance line -->
+            <line x1="0" y1="58" x2="400" y2="58" stroke="#ffd32a" stroke-width="1" stroke-dasharray="6 3" opacity=".6"/>
+            <text x="5" y="53" fill="#ffd32a" font-size="8" font-family="monospace">resistance</text>
+            <!-- Trap spike -->
+            <line x1="82" y1="12" x2="82" y2="20" stroke="#00e676" stroke-width="1.5"/>
+            <rect x="74" y="20" width="16" height="28" rx="2" fill="#00e676"/>
+            <line x1="82" y1="48" x2="82" y2="56" stroke="#8892a4" stroke-width="1.5"/>
+            <text x="65" y="10" fill="#00e676" font-size="8" font-family="monospace">😍 trap!</text>
+            <!-- Emotional buyers enter -->
+            <text x="88" y="30" fill="#ffd32a" font-size="8" font-family="monospace">← buyers rush in</text>
+            <!-- Reversal -->
+            <rect x="100" y="52" width="16" height="20" rx="2" fill="#ff4757"/>
+            <rect x="120" y="60" width="16" height="24" rx="2" fill="#ff4757"/>
+            <rect x="140" y="68" width="16" height="28" rx="2" fill="#ff4757"/>
+            <rect x="160" y="76" width="16" height="30" rx="2" fill="#ff4757"/>
+            <text x="100" y="115" fill="#ff4757" font-size="8" font-family="monospace">📉 Price falls — buyers trapped!</text>
+          </svg>
+        </div>
+        <div style="font-size:.8rem;margin-top:6px">
+          <div class="li r">Fast spike with no buildup = DANGER sign</div>
+          <div class="li r">If price breaks resistance but has no trend behind it = trap</div>
+          <div class="li g" style="margin-top:4px">Patient traders: wait to see if the move is REAL, don't chase</div>
+        </div>
+      </div>
+      <button class="cbtn" id="btn13" onclick="done(event,13)">Mark Day 13 Complete ✓</button>
+    </div>
+  </div>
+
+  <!-- DAY 14 -->
+  <div class="day-card" id="c14">
+    <div class="dc-head" onclick="tog(14)">
+      <div class="day-label">DAY 14</div>
+      <div class="day-ttl">Confusion Zone</div>
+      <div class="dc-check" id="ck14" onclick="done(event,14)"></div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="candle-vis">
+        <div class="blk-lbl">👁 Visual — Confusion Zone (Sideways / Choppy)</div>
+        <div class="chart-demo">
+          <div class="chart-title">CONFUSION — Small candles, no direction = NO TRADE</div>
+          <svg width="100%" height="100" viewBox="0 0 400 100" style="display:block">
+            <line x1="0" y1="33" x2="400" y2="33" stroke="#1a1e28" stroke-width="1"/>
+            <line x1="0" y1="66" x2="400" y2="66" stroke="#1a1e28" stroke-width="1"/>
+            <!-- Choppy small candles -->
+            <rect x="10" y="42" width="14" height="12" rx="2" fill="#00e676" opacity=".5"/>
+            <rect x="28" y="48" width="14" height="10" rx="2" fill="#ff4757" opacity=".5"/>
+            <rect x="46" y="44" width="14" height="8" rx="2" fill="#00e676" opacity=".5"/>
+            <rect x="64" y="50" width="14" height="10" rx="2" fill="#ff4757" opacity=".5"/>
+            <rect x="82" y="46" width="14" height="9" rx="2" fill="#00e676" opacity=".5"/>
+            <rect x="100" y="48" width="14" height="11" rx="2" fill="#ff4757" opacity=".5"/>
+            <rect x="118" y="43" width="14" height="8" rx="2" fill="#00e676" opacity=".5"/>
+            <rect x="136" y="49" width="14" height="10" rx="2" fill="#ff4757" opacity=".5"/>
+            <rect x="154" y="45" width="14" height="9" rx="2" fill="#8892a4" opacity=".5"/>
+            <rect x="172" y="47" width="14" height="8" rx="2" fill="#8892a4" opacity=".5"/>
+            <!-- Confusion zone box -->
+            <rect x="5" y="36" width="190" height="32" rx="4" fill="none" stroke="#ffd32a" stroke-width="1.5" stroke-dasharray="5 3"/>
+            <text x="8" y="25" fill="#ffd32a" font-size="9" font-family="monospace">⚠️ CONFUSION ZONE — NO TRADE</text>
+            <!-- Real move after -->
+            <rect x="210" y="44" width="16" height="26" rx="2" fill="#00e676"/>
+            <rect x="232" y="28" width="16" height="28" rx="2" fill="#00e676"/>
+            <rect x="254" y="14" width="16" height="26" rx="2" fill="#00e676"/>
+            <rect x="276" y="4" width="16" height="24" rx="2" fill="#00e676"/>
+            <text x="210" y="92" fill="#00e676" font-size="9" font-family="monospace">✓ Real move starts here — now enter!</text>
+          </svg>
+        </div>
+      </div>
+      <div class="blk learn">
+        <div class="blk-lbl">🎓 Learn</div>
+        <div class="li go">Small mixed candles going nowhere = confusion zone</div>
+        <div class="li go">This is where amateurs lose money over-trading</div>
+        <div class="li g" style="margin-top:4px">Pro rule: If you can't clearly see who is boss → don't trade!</div>
+      </div>
+      <button class="cbtn" id="btn14" onclick="done(event,14)">Mark Day 14 Complete ✓</button>
+    </div>
+  </div>
+
+  <!-- DAY 15 -->
+  <div class="day-card" id="c15">
+    <div class="dc-head" onclick="tog(15)">
+      <div class="day-label">DAY 15</div>
+      <div class="day-ttl">Real Move</div>
+      <div class="dc-check" id="ck15" onclick="done(event,15)"></div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk story">
+        <div class="blk-lbl">📖 Story</div>
+        <p>After confusion, the winner is decided. A big candle breaks out of the range with FORCE — this is the real move. Patient traders who waited are now rewarded.</p>
+      </div>
+      <div class="blk prac">
+        <div class="blk-lbl">🎮 Practice</div>
+        <div class="li b">Find a confusion zone (small choppy candles) on a chart</div>
+        <div class="li b">Identify what came before it — was there a trap move?</div>
+        <div class="li b">Find the REAL move that broke out of the confusion</div>
+      </div>
+      <button class="cbtn" id="btn15" onclick="done(event,15)">Mark Day 15 Complete ✓</button>
+    </div>
+  </div>
+</div><!-- end phase 4 -->
+
+<!-- ════════════ PHASE 5 ════════════ -->
+<div class="phase-sec" id="ph5" data-ps="5">
+  <div class="phase-hdr" style="--ph:var(--r)">
+    <div class="icon">🔴</div>
+    <div><h2>FULL SYSTEM</h2><p>Build your complete trading approach — Day 16 to 18</p></div>
+    <div class="days-tag">Day 16–18</div>
+  </div>
+
+  <div class="day-card" id="c16">
+    <div class="dc-head" onclick="tog(16)">
+      <div class="day-label">DAY 16</div>
+      <div class="day-ttl">System Build</div>
+      <div class="dc-check" id="ck16" onclick="done(event,16)"></div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk story">
+        <div class="blk-lbl">📖 Your System</div>
+        <p>Trend + Pullback + Strong Candle = Entry. All 3 must be present. If even ONE is missing — skip the trade.</p>
+      </div>
+      <div class="blk learn">
+        <div class="blk-lbl">🎓 3 Conditions Checklist</div>
+        <div class="li g">① Trend is CLEARLY up or down (not sideways)</div>
+        <div class="li g">② A pullback has happened (small opposite candles)</div>
+        <div class="li g">③ A STRONG candle appears confirming trend continues</div>
+      </div>
+      <button class="cbtn" id="btn16" onclick="done(event,16)">Mark Day 16 Complete ✓</button>
+    </div>
+  </div>
+
+  <div class="day-card" id="c17">
+    <div class="dc-head" onclick="tog(17)">
+      <div class="day-label">DAY 17</div>
+      <div class="day-ttl">Entry Practice</div>
+      <div class="dc-check" id="ck17" onclick="done(event,17)"></div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk learn">
+        <div class="blk-lbl">🎓 Enter ONLY Here</div>
+        <div class="li g">At the END of the pullback</div>
+        <div class="li g">When a strong candle appears in trend direction</div>
+        <div class="li r">Never enter in the MIDDLE of an impulse</div>
+        <div class="li r">Never enter without a trend being clear</div>
+      </div>
+      <div class="blk prac">
+        <div class="blk-lbl">🎮 Practice</div>
+        <div class="li b">Find 3 valid entry points on historical charts — all 3 conditions must be met</div>
+      </div>
+      <button class="cbtn" id="btn17" onclick="done(event,17)">Mark Day 17 Complete ✓</button>
+    </div>
+  </div>
+
+  <div class="day-card" id="c18">
+    <div class="dc-head" onclick="tog(18)">
+      <div class="day-label">DAY 18</div>
+      <div class="day-ttl">Avoid Mistakes</div>
+      <div class="dc-check" id="ck18" onclick="done(event,18)"></div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk rules">
+        <div class="blk-lbl">🚫 3 Big Mistakes</div>
+        <div class="li rule">Late entry — price already moved, you missed it</div>
+        <div class="li rule">Middle entry — entering during impulse, not pullback end</div>
+        <div class="li rule">No trend — entering when market is sideways/confused</div>
+      </div>
+      <button class="cbtn" id="btn18" onclick="done(event,18)">Mark Day 18 Complete ✓</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ PHASE 6 ════════════ -->
+<div class="phase-sec" id="ph6" data-ps="6">
+  <div class="phase-hdr" style="--ph:var(--orange)">
+    <div class="icon">🟠</div>
+    <div><h2>REAL SIMULATION</h2><p>Apply everything — think like a pro — Day 19 to 20</p></div>
+    <div class="days-tag">Day 19–20</div>
+  </div>
+
+  <div class="day-card" id="c19">
+    <div class="dc-head" onclick="tog(19)">
+      <div class="day-label">DAY 19</div>
+      <div class="day-ttl">Paper Trading</div>
+      <div class="dc-check" id="ck19" onclick="done(event,19)"></div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk prac">
+        <div class="blk-lbl">🎮 Practice</div>
+        <div class="li b">Take 3 paper trades — NO real money</div>
+        <div class="li b">Before each: check all 3 conditions (trend, pullback, strong candle)</div>
+        <div class="li b">Write your reason for each trade in a notebook</div>
+        <div class="li b">Record: which direction, where entered, where you'd exit</div>
+      </div>
+      <button class="cbtn" id="btn19" onclick="done(event,19)">Mark Day 19 Complete ✓</button>
+    </div>
+  </div>
+
+  <div class="day-card" id="c20">
+    <div class="dc-head" onclick="tog(20)">
+      <div class="day-label">DAY 20</div>
+      <div class="day-ttl">Review Like a Pro</div>
+      <div class="dc-check" id="ck20" onclick="done(event,20)"></div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk story">
+        <div class="blk-lbl">📖 Ask Yourself</div>
+        <p>Was the trend correct? Was my entry at the pullback end? Did I wait patiently for the signal?</p>
+      </div>
+      <div class="blk prac">
+        <div class="blk-lbl">🎮 Review Each Trade</div>
+        <div class="li b">Was the trend clearly up or down?</div>
+        <div class="li b">Did I wait for the pullback to end?</div>
+        <div class="li b">Was the entry candle strong?</div>
+        <div class="li b">What will I improve next time?</div>
+      </div>
+      <button class="cbtn" id="btn20" onclick="done(event,20)">🏆 Complete the 20-Day Program!</button>
+    </div>
+  </div>
+</div>
+
+<!-- DAILY STRUCTURE -->
+<div class="sched">
+  <h3>🧠 Daily Structure — Every Single Day</h3>
+  <div class="sched-row"><div class="sched-t">5 min</div><div class="sched-n">Learn — Read the day's lesson</div></div>
+  <div class="sched-row"><div class="sched-t">10 min</div><div class="sched-n">See Chart — Open a real chart and observe</div></div>
+  <div class="sched-row"><div class="sched-t">10 min</div><div class="sched-n">Mark — Label candles, trends, patterns</div></div>
+  <div class="sched-row"><div class="sched-t">5 min</div><div class="sched-n">Answer — Write 3 sentences about what you learned</div></div>
+  <div class="sched-row" style="border-top:1px solid var(--g);margin-top:4px"><div class="sched-t" style="font-weight:700">30 min</div><div class="sched-n" style="color:var(--g);font-weight:600">Total per day — that's all!</div></div>
+</div>
+
+<!-- GOLDEN RULE -->
+<div class="golden">
+  <h3>🎯 The Golden Rule</h3>
+  <p>"Don't rush. Repeat until your brain understands automatically."</p>
+</div>
+
+<!-- RESULTS -->
+<div style="font-size:.7rem;color:var(--dim);letter-spacing:.15em;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:10px">After 20 Days You Will <span style="flex:1;height:1px;background:var(--b);display:block"></span></div>
+<div class="res-grid">
+  <div class="res-card"><div class="res-tick">✅</div><p>Read candles like a story</p></div>
+  <div class="res-card"><div class="res-tick">✅</div><p>See the trend instantly</p></div>
+  <div class="res-card"><div class="res-tick">✅</div><p>Wait patiently for pullback</p></div>
+  <div class="res-card"><div class="res-tick">✅</div><p>Enter trades with confidence</p></div>
+</div>
+
+</div><!-- .wrap -->
+<div class="toast" id="toast"></div>
+
+<script>
+const state={done:JSON.parse(localStorage.getItem('cp_done')||'[]')};
+function save(){localStorage.setItem('cp_done',JSON.stringify(state.done))}
+function done(e,n){
+  e.stopPropagation();
+  if(state.done.includes(n))state.done=state.done.filter(x=>x!==n);
+  else{state.done.push(n);toast(n===20?'🏆 20 Days Complete! You did it!':'Day '+n+' done! Keep going 🔥')}
+  save();render();
+}
+function tog(n){document.getElementById('c'+n).classList.toggle('open')}
+function render(){
+  const d=state.done.length;
+  document.getElementById('ptxt').textContent=d+' / 20 Days';
+  document.getElementById('pbar').style.width=(d/20*100)+'%';
+  for(let i=1;i<=20;i++){
+    const ok=state.done.includes(i);
+    const ck=document.getElementById('ck'+i);
+    const btn=document.getElementById('btn'+i);
+    const card=document.getElementById('c'+i);
+    const dot=document.querySelector('#dots .dot[data-n="'+i+'"]');
+    if(ck){ck.classList.toggle('done',ok);ck.textContent=ok?'✓':''}
+    if(btn){btn.classList.toggle('done',ok);btn.textContent=ok?'✓ Completed!':(i===20?'🏆 Complete the 20-Day Program!':'Mark Day '+i+' Complete ✓')}
+    if(card)card.classList.toggle('done-card',ok);
+    if(dot)dot.classList.toggle('done',ok);
+  }
+}
+function buildDots(){
+  const c=document.getElementById('dots');
+  for(let i=1;i<=20;i++){
+    const d=document.createElement('div');
+    d.className='dot'+(state.done.includes(i)?' done':'');
+    d.dataset.n=i;d.textContent=state.done.includes(i)?'✓':i;
+    d.title='Day '+i;
+    d.onclick=()=>document.getElementById('c'+i)?.scrollIntoView({behavior:'smooth',block:'center'});
+    c.appendChild(d);
+  }
+}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000)}
+function goPhase(n){
+  document.getElementById('ph'+n)?.scrollIntoView({behavior:'smooth',block:'start'});
+  document.querySelectorAll('.pnav button').forEach(b=>b.classList.remove('act'));
+  document.querySelector('.pnav button[data-ph="'+n+'"]')?.classList.add('act');
+}
+// Intersection observer for nav
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{
+  if(e.isIntersecting){
+    const ps=e.target.dataset.ps;
+    if(ps){
+      document.querySelectorAll('.pnav button').forEach(b=>b.classList.remove('act'));
+      document.querySelector('.pnav button[data-ph="'+ps+'"]')?.classList.add('act');
+    }
+  }
+}),{threshold:.3});
+document.querySelectorAll('[data-ps]').forEach(el=>io.observe(el));
+buildDots();render();
+// open day 1
+document.getElementById('c1')?.classList.add('open');
+</script>
+</body>
+</html>
