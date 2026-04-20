@@ -15,6 +15,8 @@
   --blue:#1a4a8a;--blue-dim:rgba(26,74,138,.1);
   --purple:#6b2c91;--purple-dim:rgba(107,44,145,.12);
   --orange:#e67e22;--orange-dim:rgba(230,126,34,.12);
+  --pink:#d946a6;--pink-dim:rgba(217,70,166,.12);
+  --cyan:#0891b2;--cyan-dim:rgba(8,145,178,.12);
   --border:rgba(14,12,10,.12);--border-med:rgba(14,12,10,.22);
   --shadow:0 2px 16px rgba(14,12,10,.08);
 }
@@ -195,6 +197,80 @@ body{background:var(--paper);color:var(--ink);font-family:'IBM Plex Mono',monosp
 .toast{position:fixed;bottom:-60px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:14px 28px;border-radius:4px;font-size:.85rem;font-weight:600;z-index:1000;transition:bottom .3s}
 .toast.show{bottom:20px}
 
+/* PRO FEATURES CSS */
+
+/* SCRIPT BOX */
+.script-box{background:var(--cyan-dim);border:2px solid var(--cyan);border-radius:6px;padding:16px;margin:12px 0;position:relative;font-family:'IBM Plex Mono',monospace}
+.script-label{font-family:'Syne',sans-serif;font-weight:700;color:var(--cyan);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.script-label::before{content:'🧠'}
+.script-step{padding:6px 0;font-size:.82rem;line-height:1.5;color:rgba(14,12,10,.8);padding-left:14px;position:relative}
+.script-step::before{content:'↳';position:absolute;left:0;opacity:.5}
+.script-step b{color:var(--cyan);font-weight:600}
+
+/* ENTRY TYPES */
+.entry-types{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:12px 0}
+.entry-type{border:1.5px solid var(--border);border-radius:6px;padding:14px;background:var(--paper);transition:all .2s}
+.entry-type:hover{border-color:var(--border-med);box-shadow:var(--shadow)}
+.entry-num{font-family:'Syne',sans-serif;font-weight:700;font-size:.9rem;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.entry-num .dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.entry-type-title{font-weight:600;margin-bottom:6px;font-size:.85rem}
+.entry-type-desc{font-size:.75rem;color:rgba(14,12,10,.65);line-height:1.4;margin-bottom:6px}
+.entry-stats{font-size:.7rem;color:rgba(14,12,10,.5);display:flex;justify-content:space-between;padding-top:6px;border-top:1px solid var(--border)}
+
+/* EXIT MANAGEMENT */
+.exit-system{background:var(--grn-dim);border:2px solid var(--grn);border-radius:6px;padding:16px;margin:12px 0}
+.exit-label{font-family:'Syne',sans-serif;font-weight:700;color:var(--grn);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.exit-label::before{content:'📈'}
+.exit-step{display:grid;grid-template-columns:auto 1fr;gap:12px;padding:10px;background:rgba(26,122,69,.05);border-radius:4px;margin-bottom:8px}
+.exit-trigger{font-weight:600;color:var(--grn);font-size:.8rem;white-space:nowrap}
+.exit-action{font-size:.82rem;color:rgba(14,12,10,.8)}
+
+/* EMOTIONAL FILTER */
+.emotional-filter{background:var(--pink-dim);border:2px solid var(--pink);border-radius:6px;padding:16px;margin:12px 0}
+.emotional-label{font-family:'Syne',sans-serif;font-weight:700;color:var(--pink);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.emotional-label::before{content:'❌'}
+.emotion-item{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:.82rem}
+.emotion-emoji{font-size:1.2rem;width:30px;text-align:center}
+.emotion-text{color:rgba(14,12,10,.8);flex:1}
+.emotion-label{color:var(--pink);font-weight:600}
+
+/* JOURNAL TEMPLATE */
+.journal-template{background:var(--gold-dim);border:2px solid var(--gold);border-radius:6px;padding:16px;margin:12px 0}
+.journal-label{font-family:'Syne',sans-serif;font-weight:700;color:var(--gold);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.journal-label::before{content:'📊'}
+.journal-field{margin-bottom:12px;padding:10px;background:rgba(184,134,11,.05);border-radius:4px}
+.journal-key{font-weight:600;color:var(--gold);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.journal-value{font-size:.82rem;color:rgba(14,12,10,.7);font-style:italic;padding:6px;border-left:2px solid var(--gold);padding-left:10px}
+
+/* LOSING STREAK */
+.losing-streak{background:var(--red-dim);border:2px solid var(--red);border-radius:6px;padding:16px;margin:12px 0}
+.losing-label{font-family:'Syne',sans-serif;font-weight:700;color:var(--red);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.losing-label::before{content:'🚨'}
+.losing-item{font-size:.82rem;padding:8px;color:rgba(14,12,10,.8);display:flex;gap:10px;margin-bottom:6px}
+.losing-item::before{content:'→';color:var(--red);opacity:.6;font-weight:600}
+
+/* FAST DECISION */
+.fast-decision{background:var(--orange-dim);border:2px solid var(--orange);border-radius:6px;padding:16px;margin:12px 0}
+.fast-label{font-family:'Syne',sans-serif;font-weight:700;color:var(--orange);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.fast-label::before{content:'⚡'}
+.fast-rule{background:rgba(230,126,34,.08);border-left:3px solid var(--orange);padding:10px 12px;margin:8px 0;font-size:.82rem;color:rgba(14,12,10,.85)}
+.fast-rule b{color:var(--orange);font-weight:700}
+
+/* EDGE DISCOVERY */
+.edge-discovery{background:var(--blue-dim);border:2px solid var(--blue);border-radius:6px;padding:16px;margin:12px 0}
+.edge-label{font-family:'Syne',sans-serif;font-weight:700;color:var(--blue);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.edge-label::before{content:'🔍'}
+.edge-item{padding:8px;margin:6px 0;background:rgba(26,74,138,.05);border-radius:4px;font-size:.82rem}
+.edge-item strong{color:var(--blue)}
+
+/* REAL GOAL BOX */
+.real-goal{background:linear-gradient(135deg,var(--purple-dim),var(--pink-dim));border:2px solid var(--purple);border-radius:8px;padding:20px;margin:20px 0;position:relative;overflow:hidden}
+.real-goal::before{content:'';position:absolute;top:-50%;right:-50%;width:300px;height:300px;background:radial-gradient(circle,rgba(107,44,145,.1),transparent);border-radius:50%;pointer-events:none}
+.real-goal-inner{position:relative;z-index:1}
+.goal-label{font-family:'Syne',sans-serif;font-weight:700;color:var(--purple);font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.goal-text{font-family:'Instrument Serif',serif;font-size:1.05rem;line-height:1.7;color:var(--ink);margin-bottom:12px;font-weight:600}
+.goal-subtext{font-size:.82rem;color:rgba(14,12,10,.7);line-height:1.6}
+
 </style>
 </head>
 <body>
@@ -248,6 +324,7 @@ body{background:var(--paper);color:var(--ink);font-family:'IBM Plex Mono',monosp
     <button class="navbtn" data-ph="6">Phase 6 — Psychology</button>
     <button class="navbtn" data-ph="7">Phase 7 — Drill Mode</button>
     <button class="navbtn" data-ph="8">Phase 8 — Analysis</button>
+    <button class="navbtn" data-ph="pro">🚀 PRO LEVEL</button>
   </div>
 </div>
 
@@ -393,6 +470,40 @@ body{background:var(--paper);color:var(--ink);font-family:'IBM Plex Mono',monosp
       <div class="blk story"><div class="blk-tag">Story</div>
         <p>WHERE the candle closes tells you who truly won. Closing near the HIGH = buyers held control. Closing near the LOW = sellers stayed in charge.</p>
       </div>
+      <div class="viz">
+        <div class="viz-tag">Close Position = Final Verdict</div>
+        <div class="viz-inner">
+          <div class="citem">
+            <svg width="44" height="130" overflow="visible">
+              <line x1="22" y1="4" x2="22" y2="12" stroke="#8899aa" stroke-width="1.5"/>
+              <rect x="12" y="12" width="20" height="78" rx="2" fill="#1a7a45"/>
+              <line x1="22" y1="90" x2="22" y2="106" stroke="#8899aa" stroke-width="1.5"/>
+              <line x1="4" y1="14" x2="38" y2="14" stroke="#1a7a45" stroke-width="1" stroke-dasharray="2"/>
+              <text x="-28" y="17" fill="#1a7a45" font-size="7.5" font-family="monospace">close≈high</text>
+            </svg>
+            <div class="clabel g">Close near High<br>Buyers dominated<br>the whole session</div>
+          </div>
+          <div class="citem">
+            <svg width="44" height="130" overflow="visible">
+              <line x1="22" y1="4" x2="22" y2="18" stroke="#8899aa" stroke-width="1.5"/>
+              <rect x="12" y="18" width="20" height="78" rx="2" fill="#1a7a45" opacity=".5"/>
+              <line x1="22" y1="96" x2="22" y2="110" stroke="#8899aa" stroke-width="1.5"/>
+              <line x1="4" y1="57" x2="38" y2="57" stroke="#b8860b" stroke-width="1" stroke-dasharray="2"/>
+            </svg>
+            <div class="clabel gold">Close at Middle<br>Neutral — no<br>clear winner</div>
+          </div>
+          <div class="citem">
+            <svg width="44" height="130" overflow="visible">
+              <line x1="22" y1="4" x2="22" y2="18" stroke="#8899aa" stroke-width="1.5"/>
+              <rect x="12" y="18" width="20" height="78" rx="2" fill="#c0392b"/>
+              <line x1="22" y1="96" x2="22" y2="110" stroke="#8899aa" stroke-width="1.5"/>
+              <line x1="4" y1="94" x2="38" y2="94" stroke="#c0392b" stroke-width="1" stroke-dasharray="2"/>
+              <text x="-28" y="97" fill="#c0392b" font-size="7.5" font-family="monospace">close≈low</text>
+            </svg>
+            <div class="clabel r">Close near Low<br>Sellers dominated<br>the whole session</div>
+          </div>
+        </div>
+      </div>
       <div class="blk prac"><div class="blk-tag">Practice</div>
         <div class="li">Find 5 candles closed near HIGH — did price continue up next?</div>
         <div class="li">Find 5 candles closed near LOW — did price continue down next?</div>
@@ -453,6 +564,29 @@ body{background:var(--paper);color:var(--ink);font-family:'IBM Plex Mono',monosp
         <div class="li g"><b>UPTREND:</b> Higher Highs + Higher Lows (stairs going up)</div>
         <div class="li r"><b>DOWNTREND:</b> Lower Highs + Lower Lows (stairs going down)</div>
         <div class="li"><b>SIDEWAYS:</b> Same highs + Same lows (horizontal lines)</div>
+      </div>
+      <div class="viz">
+        <div class="viz-tag">The 3 Trend States</div>
+        <div class="viz-inner" style="flex-direction:column;gap:8px">
+          <div style="text-align:center;font-weight:600;color:#1a7a45;font-size:.8rem">UPTREND — Higher Highs + Higher Lows</div>
+          <svg width="100%" height="80" viewBox="0 0 300 80" style="display:block;margin-bottom:8px">
+            <line x1="0" y1="40" x2="300" y2="40" stroke="#1a1e28" stroke-width="1"/>
+            <polyline points="20,70 60,50 100,60 140,30 180,45 220,20 260,35" stroke="#1a7a45" stroke-width="2" fill="none"/>
+            <text x="10" y="15" fill="#1a7a45" font-size="10">↑ UP</text>
+          </svg>
+          <div style="text-align:center;font-weight:600;color:#c0392b;font-size:.8rem">DOWNTREND — Lower Highs + Lower Lows</div>
+          <svg width="100%" height="80" viewBox="0 0 300 80" style="display:block;margin-bottom:8px">
+            <line x1="0" y1="40" x2="300" y2="40" stroke="#1a1e28" stroke-width="1"/>
+            <polyline points="20,20 60,40 100,35 140,55 180,45 220,65 260,55" stroke="#c0392b" stroke-width="2" fill="none"/>
+            <text x="10" y="75" fill="#c0392b" font-size="10">↓ DOWN</text>
+          </svg>
+          <div style="text-align:center;font-weight:600;color:#b8860b;font-size:.8rem">SIDEWAYS — Same Highs + Lows (No Direction)</div>
+          <svg width="100%" height="80" viewBox="0 0 300 80" style="display:block">
+            <line x1="0" y1="40" x2="300" y2="40" stroke="#1a1e28" stroke-width="1"/>
+            <polyline points="20,45 60,35 100,45 140,35 180,45 220,35 260,45" stroke="#b8860b" stroke-width="2" fill="none"/>
+            <text x="130" y="20" fill="#b8860b" font-size="10">→ SIDEWAYS</text>
+          </svg>
+        </div>
       </div>
       <div class="blk prac"><div class="blk-tag">Practice</div>
         <div class="li">Find 3 uptrends — mark the higher highs and higher lows</div>
@@ -545,7 +679,21 @@ body{background:var(--paper);color:var(--ink);font-family:'IBM Plex Mono',monosp
       <div class="blk learn"><div class="blk-tag">How to See It</div>
         <p>Trend is UP → Price drops (pullback) → Price resumes UP. Same for downtrends: DOWN → bounces up → continues DOWN. Pullbacks are temporary moves AGAINST the main trend.</p>
       </div>
-      <button class="cbtn" id="btn9" onclick="markDone(event,9)">Mark Day 9 Complete</button>
+      <div class="viz">
+        <div class="viz-tag">Pullback Pattern — The Visual Story</div>
+        <svg width="100%" height="180" viewBox="0 0 500 180" style="display:block;margin:12px 0">
+          <line x1="0" y1="90" x2="500" y2="90" stroke="#1a1e28" stroke-width="1" opacity="0.3"/>
+          <polyline points="40,150 100,110 160,120 220,70" stroke="#1a7a45" stroke-width="3" fill="none" stroke-dasharray="5,5"/>
+          <text x="15" y="170" fill="#1a7a45" font-size="11" font-weight="600">UPTREND</text>
+          <polyline points="220,70 280,105 320,75" stroke="#b8860b" stroke-width="3" fill="none"/>
+          <text x="250" y="135" fill="#b8860b" font-size="11" font-weight="600">PULLBACK</text>
+          <polyline points="320,75 380,45 440,15" stroke="#1a7a45" stroke-width="3" fill="none"/>
+          <text x="360" y="50" fill="#1a7a45" font-size="11" font-weight="600">CONTINUE</text>
+        </svg>
+      </div>
+      <div class="blk critical"><div class="blk-tag">CRITICAL: Don't Confuse These</div>
+        <p><b>Pullback:</b> Small dip WITHIN trend, then resume. <b>Reversal:</b> Trend completely changes direction. Beginners see pullback = think reversal = sell the uptrend. This is why they lose.</p>
+      </div>
     </div>
   </div>
 
@@ -626,8 +774,32 @@ body{background:var(--paper);color:var(--ink);font-family:'IBM Plex Mono',monosp
         <div class="li chk">Round Numbers (like 50000, 40000, 30000)</div>
         <div class="li chk">Previous Swing Highs/Lows</div>
       </div>
-      <div class="blk critical"><div class="blk-tag">KEY INSIGHT</div>
-        <p>In UPTREND, price must break ABOVE equal highs = liquidity is above. In DOWNTREND, price must break BELOW equal lows = liquidity is below. This is where your target should be.</p>
+      <div class="viz">
+        <div class="viz-tag">Liquidity Zone Visualization</div>
+        <svg width="100%" height="220" viewBox="0 0 500 220" style="display:block;margin:12px 0">
+          <!-- EQUAL HIGHS (uptrend target) -->
+          <text x="20" y="30" fill="#1a7a45" font-size="12" font-weight="600">EQUAL HIGHS = LIQUIDITY ABOVE</text>
+          <polyline points="50,90 100,60 150,70 200,60 250,80" stroke="#1a1e28" stroke-width="2" fill="none"/>
+          <line x1="45" y1="60" x2="260" y2="60" stroke="#1a7a45" stroke-width="3" stroke-dasharray="5,5"/>
+          <circle cx="105" cy="60" r="4" fill="#1a7a45"/>
+          <circle cx="205" cy="60" r="4" fill="#1a7a45"/>
+          <text x="130" y="45" fill="#1a7a45" font-size="10">Price = same level = stops</text>
+          <path d="M 200 60 L 200 30" stroke="#1a7a45" stroke-width="2" marker-end="url(#arrowgreen)"/>
+          <text x="205" y="35" fill="#1a7a45" font-size="10">TARGET →</text>
+          
+          <!-- EQUAL LOWS (downtrend target) -->
+          <text x="20" y="145" fill="#c0392b" font-size="12" font-weight="600">EQUAL LOWS = LIQUIDITY BELOW</text>
+          <polyline points="50,170 100,200 150,190 200,200 250,175" stroke="#1a1e28" stroke-width="2" fill="none"/>
+          <line x1="45" y1="200" x2="260" y2="200" stroke="#c0392b" stroke-width="3" stroke-dasharray="5,5"/>
+          <circle cx="105" cy="200" r="4" fill="#c0392b"/>
+          <circle cx="205" cy="200" r="4" fill="#c0392b"/>
+          <text x="130" y="220" fill="#c0392b" font-size="10">Stops clustered here</text>
+          <path d="M 200 200 L 200 215" stroke="#c0392b" stroke-width="2"/>
+          <text x="205" y="218" fill="#c0392b" font-size="10">→ TARGET</text>
+        </svg>
+      </div>
+      <div class="blk critical"><div class="blk-tag">WHY LIQUIDITY IS YOUR TARGET</div>
+        <p>Traders place stops NEAR equal highs/lows (protection). Price reaching liquidity = hits all those stops = forced exits = BIG movement = YOUR profit. This is why you target liquidity zones, not random price levels.</p>
       </div>
       <button class="cbtn" id="btn12" onclick="markDone(event,12)">Mark Day 12 Complete</button>
     </div>
@@ -683,6 +855,61 @@ body{background:var(--paper);color:var(--ink);font-family:'IBM Plex Mono',monosp
           <div class="checklist-check" id="check5">5</div>
           <div class="checklist-text"><b>Is Risk:Reward ≥ 1:1.5?</b> Will you make at least 1.5× what you risk?</div>
         </div>
+      </div>
+
+      <div class="viz">
+        <div class="viz-tag">📊 COMPLETE TRADE EXECUTION MAP (Puts It All Together)</div>
+        <svg width="100%" height="280" viewBox="0 0 500 280" style="display:block;margin:12px 0;border:2px solid #1a4a8a;border-radius:4px;padding:8px;background:rgba(26,74,138,.05)">
+          <!-- TREND LINE (background) -->
+          <polyline points="40,200 80,160 120,170 160,130 200,140 240,100" stroke="#1a7a45" stroke-width="2" fill="none" stroke-dasharray="4,4" opacity="0.6"/>
+          <text x="30" y="220" fill="#1a7a45" font-size="10" font-weight="600">1.TREND</text>
+          
+          <!-- PULLBACK -->
+          <polyline points="240,100 260,130 280,110" stroke="#b8860b" stroke-width="2" fill="none"/>
+          <text x="245" y="155" fill="#b8860b" font-size="10" font-weight="600">2.PULL</text>
+          
+          <!-- LIQUIDITY ZONE (above) -->
+          <line x1="200" y1="60" x2="320" y2="60" stroke="#0891b2" stroke-width="3" stroke-dasharray="4,4" opacity="0.7"/>
+          <circle cx="210" cy="60" r="3" fill="#0891b2"/>
+          <circle cx="240" cy="60" r="3" fill="#0891b2"/>
+          <text x="250" y="50" fill="#0891b2" font-size="9">3.LIQUIDITY</text>
+          
+          <!-- TRAP (could be reversal before entry) -->
+          <rect x="260" y="125" width="15" height="20" fill="#ff6b6b" opacity="0.5"/>
+          <text x="265" y="165" fill="#ff6b6b" font-size="9">4.TRAP?</text>
+          
+          <!-- ENTRY CANDLE (strong confirmation) -->
+          <rect x="285" y="105" width="20" height="25" fill="#1a7a45" stroke="#1a7a45" stroke-width="2"/>
+          <text x="285" y="150" fill="#1a7a45" font-size="10" font-weight="600">5.ENTRY</text>
+          <text x="285" y="165" fill="#1a7a45" font-size="8">(Strong)</text>
+          
+          <!-- STOP LOSS (below entry) -->
+          <line x1="295" y1="135" x2="295" y2="160" stroke="#c0392b" stroke-width="2"/>
+          <circle cx="295" cy="160" r="3" fill="#c0392b"/>
+          <text x="305" y="165" fill="#c0392b" font-size="9">SL</text>
+          
+          <!-- TARGET (at liquidity above) -->
+          <line x1="305" y1="130" x2="305" y2="60" stroke="#1a7a45" stroke-width="2" stroke-dasharray="3,3"/>
+          <circle cx="305" cy="60" r="3" fill="#1a7a45"/>
+          <text x="310" y="65" fill="#1a7a45" font-size="9">TARGET</text>
+          
+          <!-- EXECUTION (arrow) -->
+          <path d="M 300 125 L 300 110" stroke="#1a4a8a" stroke-width="2.5" marker-end="url(#arrowblue)"/>
+          <text x="310" y="120" fill="#1a4a8a" font-size="9" font-weight="600">ENTER</text>
+          
+          <!-- RR label -->
+          <text x="320" y="100" fill="#1a4a8a" font-size="8">RR ≥ 1:1.5</text>
+        </svg>
+      </div>
+
+      <div class="blk learn"><div class="blk-tag">What This Map Shows</div>
+        <div class="li chk"><b>1. TREND:</b> Direction established (HH/HL for up, LL/LH for down)</div>
+        <div class="li chk"><b>2. PULLBACK:</b> Small retrace within trend (temporary)</div>
+        <div class="li chk"><b>3. LIQUIDITY:</b> Equal highs or lows where stops cluster (your target)</div>
+        <div class="li chk"><b>4. TRAP:</b> Optional — breakout + reversal (confirms strength)</div>
+        <div class="li chk"><b>5. ENTRY:</b> Strong confirming candle + checklist YES on all 5</div>
+        <div class="li chk"><b>SL:</b> Below pullback low (protect if wrong)</div>
+        <div class="li chk"><b>TARGET:</b> At liquidity zone (where stops break = profit)</div>
       </div>
 
       <div class="blk warn"><div class="blk-tag">Golden Rule</div>
@@ -758,18 +985,45 @@ body{background:var(--paper);color:var(--ink);font-family:'IBM Plex Mono',monosp
         <p>👉 "If breakout = TOO FAST + IMMEDIATE REVERSAL = TRAP"</p>
       </div>
 
-      <div class="rule-box">
-        <div class="rule-label">Trap Signs</div>
-        <div class="rule-text">
-          <div class="li">✕ Huge candle breaks above resistance</div>
-          <div class="li">✕ Very high volume on breakout</div>
-          <div class="li">✕ But then NEXT candle reverses hard</div>
-          <div class="li">✕ Closes back below the breakout level</div>
-        </div>
+      <div class="viz">
+        <div class="viz-tag">🔥 THE TRAP FLOW (Most Important Visual in Course)</div>
+        <svg width="100%" height="240" viewBox="0 0 550 240" style="display:block;margin:12px 0;border:2px solid #c0392b;border-radius:4px;padding:8px;background:rgba(192,57,43,.05)">
+          <!-- Resistance Line -->
+          <line x1="40" y1="80" x2="520" y2="80" stroke="#b8860b" stroke-width="3" stroke-dasharray="5,5"/>
+          <text x="10" y="75" fill="#b8860b" font-size="11" font-weight="600">RESISTANCE</text>
+          
+          <!-- Initial trend up to resistance -->
+          <polyline points="50,140 90,110 130,90" stroke="#1a1e28" stroke-width="2" fill="none"/>
+          <text x="80" y="155" fill="#666" font-size="10">Uptrend</text>
+          
+          <!-- BREAKOUT CANDLE (huge, above resistance) -->
+          <rect x="130" y="40" width="40" height="50" fill="#1a7a45" opacity="0.6" stroke="#1a7a45" stroke-width="2"/>
+          <text x="110" y="180" fill="#1a7a45" font-size="11" font-weight="600">BREAKOUT</text>
+          <circle cx="170" cy="50" r="3" fill="#c0392b"/>
+          <text x="175" y="55" fill="#c0392b" font-size="10" font-weight="600">❌ RETAIL BUYS</text>
+          
+          <!-- Reversal candle (red, back below) -->
+          <rect x="190" y="100" width="40" height="50" fill="#c0392b" opacity="0.8" stroke="#c0392b" stroke-width="2"/>
+          <text x="185" y="175" fill="#c0392b" font-size="11" font-weight="600">REVERSAL</text>
+          <circle cx="230" cy="120" r="3" fill="#1a7a45"/>
+          <text x="235" y="125" fill="#1a7a45" font-size="10" font-weight="600">✅ SMART MONEY</text>
+          
+          <!-- Continuation down (violent) -->
+          <polyline points="250,130 300,170 350,200" stroke="#c0392b" stroke-width="3" fill="none"/>
+          <text x="280" y="220" fill="#c0392b" font-size="11" font-weight="600">VIOLENT DROP</text>
+          
+          <!-- Stop losses hit zone -->
+          <line x1="160" y1="95" x2="160" y2="135" stroke="#ff6b6b" stroke-width="2" stroke-dasharray="3,3"/>
+          <circle cx="160" cy="115" r="4" fill="#ff6b6b"/>
+          <text x="130" y="152" fill="#ff6b6b" font-size="10" font-weight="600">💥 STOPS HIT</text>
+          
+          <!-- Arrow showing flow -->
+          <path d="M 165 75 Q 190 85 210 105" stroke="#666" stroke-width="1" fill="none" marker-end="url(#arrowblack)"/>
+        </svg>
       </div>
-
-      <div class="blk learn"><div class="blk-tag">The Opportunity</div>
-        <p>When you see a trap, the smart move is OPPOSITE of the breakout. If breakout was UP then reversal = trade DOWN. If breakout was DOWN then reversal = trade UP.</p>
+      
+      <div class="blk critical"><div class="blk-tag">HOW THIS MAKES MONEY</div>
+        <p><b>Step 1:</b> You see breakout starting. <b>Step 2:</b> You DON'T follow retail — you WAIT. <b>Step 3:</b> Reversal happens (trap confirmed). <b>Step 4:</b> You enter OPPOSITE direction. <b>Step 5:</b> Violent move creates 3:1 or 5:1 profit. Retail lost, you won.</p>
       </div>
 
       <button class="cbtn" id="btn15" onclick="markDone(event,15)">Mark Day 15 Complete</button>
@@ -890,7 +1144,45 @@ body{background:var(--paper);color:var(--ink);font-family:'IBM Plex Mono',monosp
         <p><b>London open trap:</b> Asian trades are trapped when London opens. <b>New York manipulation:</b> NY traders hunt stops when Asian closes. Know the times = know the traps.</p>
       </div>
 
-      <button class="cbtn" id="btn18" onclick="markDone(event,18)">Mark Day 18 Complete</button>
+      <div class="viz">
+        <div class="viz-tag">⏱️ Trading Day Timeline (When Liquidity Forms)</div>
+        <svg width="100%" height="180" viewBox="0 0 550 180" style="display:block;margin:12px 0;border:2px solid #0891b2;border-radius:4px;padding:8px;background:rgba(8,145,178,.05)">
+          <!-- Timeline base -->
+          <line x1="40" y1="80" x2="520" y2="80" stroke="#1a1e28" stroke-width="2"/>
+          
+          <!-- ASIAN OPEN -->
+          <circle cx="70" cy="80" r="6" fill="#c0392b"/>
+          <text x="50" y="110" fill="#c0392b" font-size="11" font-weight="600">ASIAN</text>
+          <text x="50" y="130" fill="#c0392b" font-size="9">OPEN</text>
+          <rect x="40" y="140" width="60" height="30" fill="#c0392b" opacity="0.2" stroke="#c0392b" stroke-width="1" stroke-dasharray="2,2"/>
+          <text x="45" y="160" fill="#c0392b" font-size="8">❌ Noise</text>
+          
+          <!-- LONDON OPEN (11:45 your time) ⭐ -->
+          <circle cx="220" cy="80" r="8" fill="#1a7a45" stroke="#1a7a45" stroke-width="2"/>
+          <text x="195" y="110" fill="#1a7a45" font-size="11" font-weight="600">LONDON</text>
+          <text x="205" y="130" fill="#1a7a45" font-size="9">11:45</text>
+          <rect x="180" y="140" width="80" height="30" fill="#1a7a45" opacity="0.3" stroke="#1a7a45" stroke-width="2"/>
+          <text x="190" y="160" fill="#1a7a45" font-size="9">🔥 YOUR PRIME</text>
+          
+          <!-- MID-DAY -->
+          <circle cx="310" cy="80" r="6" fill="#b8860b"/>
+          <text x="290" y="110" fill="#b8860b" font-size="11" font-weight="600">MID-DAY</text>
+          <text x="295" y="130" fill="#b8860b" font-size="9">Slow</text>
+          <rect x="270" y="140" width="80" height="30" fill="#b8860b" opacity="0.2" stroke="#b8860b" stroke-width="1" stroke-dasharray="2,2"/>
+          <text x="280" y="160" fill="#b8860b" font-size="8">⚠️ Lower Vol</text>
+          
+          <!-- NY OPEN -->
+          <circle cx="440" cy="80" r="7" fill="#e67e22"/>
+          <text x="415" y="110" fill="#e67e22" font-size="11" font-weight="600">NEW YORK</text>
+          <text x="425" y="130" fill="#e67e22" font-size="9">OPEN</text>
+          <rect x="390" y="140" width="100" height="30" fill="#e67e22" opacity="0.2" stroke="#e67e22" stroke-width="1" stroke-dasharray="2,2"/>
+          <text x="410" y="160" fill="#e67e22" font-size="8">⚠️ Manipulation</text>
+        </svg>
+      </div>
+
+      <div class="blk learn"><div class="blk-tag">Your Optimal Time Window</div>
+        <p>🔥 <b>London Open (11:45):</b> Fresh liquidity forms here. Trapped Asian traders exit. This is PRIME TIME. Focus your best energy here. Your strategy aligns with market reality.</p>
+      </div>
     </div>
   </div>
 </div><!-- end ph5 -->
@@ -957,13 +1249,54 @@ body{background:var(--paper);color:var(--ink);font-family:'IBM Plex Mono',monosp
         </table>
       </div>
 
-      <div class="rule-box">
-        <div class="rule-label">The Connection</div>
-        <div class="rule-text">
-          <div class="li">Panic = liquidity creation</div>
-          <div class="li">Liquidity = market movement</div>
-          <div class="li">YOUR job = be on the RIGHT side of trapped traders</div>
-        </div>
+      <div class="viz">
+        <div class="viz-tag">📈 The Emotional Curve — Where Price Reverses</div>
+        <svg width="100%" height="200" viewBox="0 0 500 200" style="display:block;margin:12px 0;border:2px solid #6b2c91;border-radius:4px;padding:8px;background:rgba(107,44,145,.05)">
+          <!-- Grid lines -->
+          <line x1="40" y1="160" x2="480" y2="160" stroke="#1a1e28" stroke-width="1" opacity="0.3"/>
+          <line x1="40" y1="120" x2="480" y2="120" stroke="#1a1e28" stroke-width="1" opacity="0.2"/>
+          <line x1="40" y1="80" x2="480" y2="80" stroke="#1a1e28" stroke-width="1" opacity="0.2"/>
+          <line x1="40" y1="40" x2="480" y2="40" stroke="#1a1e28" stroke-width="1" opacity="0.2"/>
+          
+          <!-- Y-axis labels (emotions) -->
+          <text x="8" y="165" fill="#1a7a45" font-size="10">😎 CALM</text>
+          <text x="5" y="45" fill="#c0392b" font-size="10">😱 PANIC</text>
+          
+          <!-- X-axis (time/trade progress) -->
+          <line x1="40" y1="160" x2="480" y2="160" stroke="#1a1e28" stroke-width="2"/>
+          <text x="45" y="180" fill="#666" font-size="9">Entry</text>
+          <text x="200" y="180" fill="#666" font-size="9">Holding</text>
+          <text x="420" y="180" fill="#666" font-size="9">Exit</text>
+          
+          <!-- Emotional curve (relaxed → nervous → fear → panic) -->
+          <polyline points="50,150 120,120 200,90 280,50 350,20 420,10" stroke="#6b2c91" stroke-width="3" fill="none"/>
+          
+          <!-- Emotion markers on curve -->
+          <circle cx="50" cy="150" r="4" fill="#1a7a45"/>
+          <text x="45" y="135" fill="#1a7a45" font-size="9" font-weight="600">RELAXED</text>
+          
+          <circle cx="120" cy="120" r="4" fill="#b8860b"/>
+          <text x="105" y="105" fill="#b8860b" font-size="9" font-weight="600">NERVOUS</text>
+          
+          <circle cx="200" cy="90" r="4" fill="#e67e22"/>
+          <text x="185" y="75" fill="#e67e22" font-size="9" font-weight="600">FEAR</text>
+          
+          <circle cx="350" cy="20" r="4" fill="#c0392b"/>
+          <text x="335" y="10" fill="#c0392b" font-size="9" font-weight="600">PANIC 💥</text>
+          
+          <!-- Zone marking (REVERSAL ZONE) -->
+          <rect x="300" y="5" width="180" height="40" fill="#c0392b" opacity="0.1" stroke="#c0392b" stroke-width="2" stroke-dasharray="4,4"/>
+          <text x="360" y="35" fill="#c0392b" font-size="11" font-weight="600">REVERSAL ZONE</text>
+          <text x="330" y="50" fill="#c0392b" font-size="8">(Violent moves + stops hit)</text>
+        </svg>
+      </div>
+
+      <div class="blk learn"><div class="blk-tag">What The Curve Shows</div>
+        <div class="li">Entry = relaxed (setup looks good)</div>
+        <div class="li">Trade moves for profit = nervous (don't lose it!)</div>
+        <div class="li">Profit shrinking = fear (get out?)</div>
+        <div class="li">Hitting stop loss = panic (I'm done!)</div>
+        <div class="li">🔥 PANIC ZONE = Most violent moves = Most profit for YOU (if positioned right)</div>
       </div>
 
       <div class="blk critical"><div class="blk-tag">Key Insight</div>
@@ -1064,12 +1397,55 @@ body{background:var(--paper);color:var(--ink);font-family:'IBM Plex Mono',monosp
         </div>
       </div>
 
-      <div class="blk prac"><div class="blk-tag">Practice</div>
-        <div class="li">Pull up any chart</div>
-        <div class="li">Check weekly trend</div>
-        <div class="li">Check daily trend</div>
-        <div class="li">Check 4H trend</div>
-        <div class="li">Only look for 15m entry IF all 3 agree</div>
+      <div class="viz">
+        <div class="viz-tag">🏔️ Multi-Timeframe Hierarchy (Top-Down)</div>
+        <svg width="100%" height="260" viewBox="0 0 500 260" style="display:block;margin:12px 0;border:2px solid #1a4a8a;border-radius:4px;padding:8px;background:rgba(26,74,138,.05)">
+          <!-- PYRAMID LAYERS -->
+          <!-- Top: WEEKLY (direction) -->
+          <polygon points="250,20 450,100 50,100" fill="#1a4a8a" stroke="#1a4a8a" stroke-width="2"/>
+          <text x="200" y="65" fill="#fff" font-size="13" font-weight="700">WEEKLY</text>
+          <text x="180" y="85" fill="#fff" font-size="10">(Direction)</text>
+          
+          <!-- DAILY (bias) -->
+          <polygon points="250,100 400,160 100,160" fill="#0891b2" stroke="#0891b2" stroke-width="2"/>
+          <text x="200" y="140" fill="#fff" font-size="13" font-weight="700">DAILY</text>
+          <text x="190" y="160" fill="#fff" font-size="10">(Bias)</text>
+          
+          <!-- 4H (setup) -->
+          <polygon points="250,160 350,210 150,210" fill="#0c997e" stroke="#0c997e" stroke-width="2"/>
+          <text x="210" y="195" fill="#fff" font-size="12" font-weight="700">4-HOUR</text>
+          <text x="205" y="211" fill="#fff" font-size="9">(Setup)</text>
+          
+          <!-- 15M (entry) - base -->
+          <polygon points="250,210 310,235 190,235" fill="#16a34a" stroke="#16a34a" stroke-width="2"/>
+          <text x="220" y="230" fill="#fff" font-size="11" font-weight="700">15M</text>
+          <text x="200" y="243" fill="#fff" font-size="8">(Entry)</text>
+          
+          <!-- Arrow showing confluence -->
+          <path d="M 250 100 L 250 160 L 250 210" stroke="#fff" stroke-width="2" stroke-dasharray="3,3" marker-end="url(#arrowwhite)"/>
+          <text x="260" y="160" fill="#fff" font-size="9" font-weight="600">CHECK</text>
+          <text x="260" y="175" fill="#fff" font-size="9">ALIGNMENT</text>
+          
+          <!-- Conflict example (right side) -->
+          <text x="340" y="70" fill="#c0392b" font-size="10">Conflict:</text>
+          <text x="330" y="90" fill="#c0392b" font-size="9">Weekly UP</text>
+          <text x="330" y="105" fill="#c0392b" font-size="9">Daily DOWN</text>
+          <text x="340" y="120" fill="#c0392b" font-size="11" font-weight="600">SKIP!</text>
+          
+          <!-- Success example (left side) -->
+          <text x="20" y="70" fill="#1a7a45" font-size="10">All Aligned:</text>
+          <text x="15" y="90" fill="#1a7a45" font-size="9">Weekly UP ✓</text>
+          <text x="15" y="105" fill="#1a7a45" font-size="9">Daily UP ✓</text>
+          <text x="15" y="120" fill="#1a7a45" font-size="9">4H UP ✓</text>
+          <text x="25" y="138" fill="#1a7a45" font-size="11" font-weight="600">TRADE!</text>
+        </svg>
+      </div>
+
+      <div class="blk learn"><div class="blk-tag">The Hierarchy Principle</div>
+        <div class="li chk"><b>Weekly:</b> The boss. If down, don't go long. If up, favor buys.</div>
+        <div class="li chk"><b>Daily:</b> The supervisor. Confirms weekly. Gives you the bias.</div>
+        <div class="li chk"><b>4-Hour:</b> The manager. Shows the setup. Where's the pullback? Where's the trap?</div>
+        <div class="li chk"><b>15-Minute:</b> The worker. The actual entry moment. After all layers agree.</div>
       </div>
     </div>
   </div>
@@ -1156,7 +1532,65 @@ body{background:var(--paper);color:var(--ink);font-family:'IBM Plex Mono',monosp
         <p><b>Trade → Lose → Analyze → Find mistake → Fix system → Trade better → Repeat.</b> This loop is how amateurs become professionals.</p>
       </div>
 
-      <div class="blk prac"><div class="blk-tag">Your Loss Review Process</div>
+      <div class="viz">
+        <div class="viz-tag">❌➜✅ Losing Trade Analysis (Before & After)</div>
+        <svg width="100%" height="240" viewBox="0 0 550 240" style="display:block;margin:12px 0;border:2px solid #c0392b;border-radius:4px;padding:8px;background:rgba(192,57,43,.05)">
+          <!-- LEFT SIDE: WRONG ENTRY -->
+          <text x="30" y="25" fill="#c0392b" font-size="12" font-weight="600">❌ WRONG WAY</text>
+          <text x="30" y="45" fill="#c0392b" font-size="10">(No liquidity check)</text>
+          
+          <!-- Resistance line -->
+          <line x1="40" y1="70" x2="140" y2="70" stroke="#b8860b" stroke-width="2" stroke-dasharray="4,4" opacity="0.5"/>
+          <text x="45" y="60" fill="#b8860b" font-size="9">Resistance</text>
+          
+          <!-- Price moves up, breaks resistance -->
+          <polyline points="50,100 80,80 110,75" stroke="#1a1e28" stroke-width="2" fill="none"/>
+          
+          <!-- WRONG ENTRY (no confirmation) -->
+          <rect x="100" y="65" width="25" height="20" fill="#c0392b"/>
+          <circle cx="115" cy="75" r="5" fill="#c0392b"/>
+          <text x="105" y="110" fill="#c0392b" font-size="10" font-weight="600">ENTER</text>
+          <text x="95" y="125" fill="#c0392b" font-size="8">(Too early!)</text>
+          
+          <!-- Reversal -->
+          <polyline points="120,75 135,90 150,100" stroke="#c0392b" stroke-width="2" fill="none"/>
+          <text x="130" y="120" fill="#c0392b" font-size="9">LOSS</text>
+          
+          <!-- RIGHT SIDE: CORRECT ENTRY -->
+          <text x="340" y="25" fill="#1a7a45" font-size="12" font-weight="600">✅ CORRECT WAY</text>
+          <text x="330" y="45" fill="#1a7a45" font-size="10">(Check liquidity first)</text>
+          
+          <!-- Resistance line -->
+          <line x1="290" y1="70" x2="390" y2="70" stroke="#b8860b" stroke-width="2" stroke-dasharray="4,4" opacity="0.5"/>
+          <text x="295" y="60" fill="#b8860b" font-size="9">Resistance</text>
+          
+          <!-- Equal stops zone -->
+          <rect x="280" y="50" width="130" height="25" fill="#1a7a45" opacity="0.15" stroke="#1a7a45" stroke-width="1" stroke-dasharray="2,2"/>
+          <text x="310" y="68" fill="#1a7a45" font-size="8" font-weight="600">LIQUIDITY CHECK ✓</text>
+          
+          <!-- Price moves up -->
+          <polyline points="300,100 330,80 360,75" stroke="#1a1e28" stroke-width="2" fill="none"/>
+          
+          <!-- Breakout -->
+          <rect x="350" y="65" width="25" height="20" fill="#1a7a45" opacity="0.6"/>
+          
+          <!-- Confirmation candle -->
+          <rect x="370" y="60" width="20" height="20" fill="#1a7a45" stroke="#1a7a45" stroke-width="2"/>
+          <circle cx="390" cy="70" r="5" fill="#1a7a45"/>
+          <text x="375" y="110" fill="#1a7a45" font-size="10" font-weight="600">ENTER</text>
+          <text x="360" y="125" fill="#1a7a45" font-size="8">(Confirmed!)</text>
+          
+          <!-- Strong continuation -->
+          <polyline points="390,70 410,50 430,30" stroke="#1a7a45" stroke-width="3" fill="none"/>
+          <text x="420" y="50" fill="#1a7a45" font-size="10" font-weight="600">WIN</text>
+          
+          <!-- Lesson box -->
+          <rect x="280" y="160" width="260" height="65" fill="#1a7a45" opacity="0.1" stroke="#1a7a45" stroke-width="2" rx="4"/>
+          <text x="300" y="180" fill="#1a7a45" font-size="11" font-weight="600">LESSON LEARNED:</text>
+          <text x="300" y="200" fill="#1a7a45" font-size="9">❌ Mistake: Entered breakout without liquidity confirmation</text>
+          <text x="300" y="218" fill="#1a7a45" font-size="9">✅ Fix: Always check equal highs/lows BEFORE entry</text>
+        </svg>
+      </div>
         <div class="li">1. Screenshot the losing trade</div>
         <div class="li">2. Mark where you entered (with ✕)</div>
         <div class="li">3. Mark where you exited (with ✕)</div>
@@ -1234,6 +1668,613 @@ body{background:var(--paper);color:var(--ink);font-family:'IBM Plex Mono',monosp
   </div>
 </div><!-- end ph9 -->
 
+<!-- PRO FEATURES SECTION -->
+<div class="phase-block" id="pro" data-ps="pro">
+  <div class="phase-label">
+    <div class="phase-line"></div>
+    <div class="phase-tag"><span class="phase-num">🚀</span> Pro Level — Advanced Execution</div>
+    <div class="phase-line"></div>
+  </div>
+
+  <!-- PRO 1: PRE-TRADE THINKING SCRIPT -->
+  <div class="day-card" id="pro1">
+    <div class="dc-head" onclick="tog('pro1')">
+      <div class="day-num">PRO</div>
+      <div class="day-title">Pre-Trade Thinking Script</div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk story"><div class="blk-tag">Story</div>
+        <p>Before every trade, your brain needs a MENTAL FLOW. Not a checklist you rush through. A script you speak to yourself.</p>
+      </div>
+
+      <div class="script-box">
+        <div class="script-label">🧠 Before Every Trade, Say This:</div>
+        <div class="script-step">1. <b>Who is in control?</b> (buyers/sellers) — Look at the candles. Who just won?</div>
+        <div class="script-step">2. <b>Where is liquidity?</b> — Find equal highs/lows. Where are the stops?</div>
+        <div class="script-step">3. <b>Who is trapped?</b> — Previous buyers or sellers with stops nearby?</div>
+        <div class="script-step">4. <b>Where will they panic?</b> — What price breaks their stops = forces exit?</div>
+        <div class="script-step">5. <b>Am I early or confirmed?</b> — Is my entry PROOF or just HOPE?</div>
+      </div>
+
+      <div class="viz">
+        <div class="viz-tag">🎯 Decision Flow (Turn Script Into Automatic Decision)</div>
+        <svg width="100%" height="220" viewBox="0 0 500 220" style="display:block;margin:12px 0;border:2px solid #0891b2;border-radius:4px;padding:8px;background:rgba(8,145,178,.05)">
+          <!-- FLOW: Question 1 -->
+          <rect x="40" y="10" width="120" height="40" fill="#0891b2" stroke="#0891b2" stroke-width="2" rx="4"/>
+          <text x="55" y="35" fill="#fff" font-size="10" font-weight="600" text-anchor="start">Trend Clear?</text>
+          
+          <!-- No path (skip) -->
+          <path d="M 50 50 L 50 80" stroke="#c0392b" stroke-width="2"/>
+          <text x="45" y="70" fill="#c0392b" font-size="10" font-weight="600">NO</text>
+          <rect x="30" y="80" width="60" height="25" fill="#c0392b" stroke="#c0392b" stroke-width="2" rx="3"/>
+          <text x="40" y="100" fill="#fff" font-size="9" font-weight="600">SKIP</text>
+          
+          <!-- Yes path (continue) -->
+          <path d="M 160 30 L 200 30" stroke="#1a7a45" stroke-width="2"/>
+          <text x="175" y="20" fill="#1a7a45" font-size="10" font-weight="600">YES</text>
+          
+          <!-- Question 2 -->
+          <rect x="200" y="10" width="120" height="40" fill="#0891b2" stroke="#0891b2" stroke-width="2" rx="4"/>
+          <text x="215" y="35" fill="#fff" font-size="10" font-weight="600">Liquidity OK?</text>
+          <path d="M 210 50 L 210 80" stroke="#c0392b" stroke-width="2"/>
+          <text x="195" y="70" fill="#c0392b" font-size="10" font-weight="600">NO</text>
+          <rect x="190" y="80" width="60" height="25" fill="#c0392b" stroke="#c0392b" stroke-width="2" rx="3"/>
+          <text x="200" y="100" fill="#fff" font-size="9" font-weight="600">SKIP</text>
+          <path d="M 320 30 L 360 30" stroke="#1a7a45" stroke-width="2"/>
+          <text x="335" y="20" fill="#1a7a45" font-size="10" font-weight="600">YES</text>
+          
+          <!-- Question 3 -->
+          <rect x="360" y="10" width="120" height="40" fill="#0891b2" stroke="#0891b2" stroke-width="2" rx="4"/>
+          <text x="370" y="35" fill="#fff" font-size="10" font-weight="600">Trap/RR OK?</text>
+          <path d="M 370 50 L 370 80" stroke="#c0392b" stroke-width="2"/>
+          <text x="355" y="70" fill="#c0392b" font-size="10" font-weight="600">NO</text>
+          <rect x="350" y="80" width="60" height="25" fill="#c0392b" stroke="#c0392b" stroke-width="2" rx="3"/>
+          <text x="360" y="100" fill="#fff" font-size="9" font-weight="600">SKIP</text>
+          <path d="M 420 50 L 420 140" stroke="#1a7a45" stroke-width="2"/>
+          <text x="425" y="100" fill="#1a7a45" font-size="10" font-weight="600">YES</text>
+          
+          <!-- ENTER -->
+          <rect x="380" y="140" width="80" height="40" fill="#1a7a45" stroke="#1a7a45" stroke-width="3" rx="6"/>
+          <text x="400" y="165" fill="#fff" font-size="12" font-weight="700">ENTER</text>
+          <text x="400" y="175" fill="#fff" font-size="8">Trade</text>
+        </svg>
+      </div>
+
+      <div class="blk prac"><div class="blk-tag">Practice</div>
+        <div class="li">Before your next 10 trades, speak this script OUT LOUD</div>
+        <div class="li">Record yourself answering each question</div>
+        <div class="li">After the trade, listen to your recording — did you see what actually happened?</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRO 2: ENTRY TYPES -->
+  <div class="day-card" id="pro2">
+    <div class="dc-head" onclick="tog('pro2')">
+      <div class="day-num">PRO</div>
+      <div class="day-title">The 3 Entry Types (Clarity Under Pressure)</div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk story"><div class="blk-tag">Story</div>
+        <p>When price is moving FAST, your brain freezes. You don't know if you're early or late. Know the 3 types = instant clarity.</p>
+      </div>
+
+      <div class="entry-types">
+        <div class="entry-type">
+          <div class="entry-num"><span class="dot" style="background:#e67e22"></span>Type 1: Aggressive</div>
+          <div class="entry-type-title">Enter Immediately After Trap</div>
+          <div class="entry-type-desc">Jump in right after trap candle reverses. Price is already moving YOUR direction.</div>
+          <div class="entry-stats"><span>RR: Higher</span><span>Accuracy: Lower</span></div>
+        </div>
+
+        <div class="entry-type">
+          <div class="entry-num"><span class="dot" style="background:#1a7a45"></span>Type 2: Confirmation</div>
+          <div class="entry-type-title">Wait 1 Extra Candle</div>
+          <div class="entry-type-desc">See confirmation candle close. Then enter. Balanced risk/reward, proven signal.</div>
+          <div class="entry-stats"><span>RR: Balanced</span><span>Accuracy: Medium</span></div>
+        </div>
+
+        <div class="entry-type">
+          <div class="entry-num"><span class="dot" style="background:#1a4a8a"></span>Type 3: Pullback</div>
+          <div class="entry-type-title">Enter on Small Retrace</div>
+          <div class="entry-type-desc">Wait for small pullback AFTER confirmation. Most proven entry. Highest accuracy.</div>
+          <div class="entry-stats"><span>RR: Lower</span><span>Accuracy: Highest</span></div>
+        </div>
+      </div>
+
+      <div class="viz">
+        <div class="viz-tag">📊 3 Entry Types Side-by-Side (Same Setup, Different Timing)</div>
+        <svg width="100%" height="260" viewBox="0 0 550 260" style="display:block;margin:12px 0;border:2px solid #e67e22;border-radius:4px;padding:8px;background:rgba(230,126,34,.05)">
+          <!-- TYPE 1: AGGRESSIVE -->
+          <text x="20" y="25" fill="#e67e22" font-size="12" font-weight="600">TYPE 1: AGGRESSIVE</text>
+          <polyline points="30,80 50,60 70,65 90,50" stroke="#1a1e28" stroke-width="2" fill="none"/>
+          <circle cx="90" cy="50" r="5" fill="#e67e22"/>
+          <text x="85" y="75" fill="#e67e22" font-size="10" font-weight="600">ENTER</text>
+          <line x1="90" y1="55" x2="90" y2="100" stroke="#e67e22" stroke-width="2" stroke-dasharray="3,3"/>
+          <text x="95" y="85" fill="#e67e22" font-size="9">Fast</text>
+          <text x="20" y="130" fill="#666" font-size="9">RR: 3:1 ↑</text>
+          <text x="20" y="145" fill="#666" font-size="9">Win: 50-60%</text>
+          <text x="20" y="160" fill="#666" font-size="9">Skill: Expert</text>
+          
+          <!-- TYPE 2: CONFIRMATION -->
+          <text x="210" y="25" fill="#1a7a45" font-size="12" font-weight="600">TYPE 2: CONFIRMATION</text>
+          <polyline points="220,80 240,60 260,65 280,50" stroke="#1a1e28" stroke-width="2" fill="none"/>
+          <rect x="270" y="48" width="15" height="15" fill="#1a7a45" opacity="0.6"/>
+          <circle cx="287" cy="55" r="5" fill="#1a7a45"/>
+          <text x="270" y="80" fill="#1a7a45" font-size="10" font-weight="600">ENTER</text>
+          <line x1="287" y1="60" x2="287" y2="100" stroke="#1a7a45" stroke-width="2" stroke-dasharray="3,3"/>
+          <text x="285" y="85" fill="#1a7a45" font-size="9">Wait</text>
+          <text x="210" y="130" fill="#666" font-size="9">RR: 1.5:1</text>
+          <text x="210" y="145" fill="#666" font-size="9">Win: 60-65%</text>
+          <text x="210" y="160" fill="#666" font-size="9">Skill: Inter</text>
+          
+          <!-- TYPE 3: PULLBACK -->
+          <text x="390" y="25" fill="#1a4a8a" font-size="12" font-weight="600">TYPE 3: PULLBACK ★</text>
+          <polyline points="400,80 420,60 440,65 460,50" stroke="#1a1e28" stroke-width="2" fill="none"/>
+          <polyline points="460,50 475,70 485,52" stroke="#1a4a8a" stroke-width="2" fill="none"/>
+          <circle cx="485" cy="52" r="5" fill="#1a4a8a"/>
+          <text x="475" y="80" fill="#1a4a8a" font-size="10" font-weight="600">ENTER</text>
+          <line x1="485" y1="57" x2="485" y2="100" stroke="#1a4a8a" stroke-width="2" stroke-dasharray="3,3"/>
+          <text x="483" y="85" fill="#1a4a8a" font-size="9">Safest</text>
+          <text x="390" y="130" fill="#666" font-size="9">RR: 1:1.5</text>
+          <text x="390" y="145" fill="#666" font-size="9">Win: 70%+ ✓</text>
+          <text x="390" y="160" fill="#666" font-size="9">Skill: Beginner</text>
+          
+          <!-- Bottom comparison -->
+          <text x="20" y="200" fill="#666" font-size="11" font-weight="600">JOURNEY:</text>
+          <text x="30" y="220" fill="#e67e22" font-size="9">Type 3 (20 trades) → Type 2 (20) → Type 1 (when expert)</text>
+          <text x="20" y="240" fill="#1a4a8a" font-size="10" font-weight="600">⭐ Start with Type 3 for highest win rate confidence</text>
+        </svg>
+      </div>
+
+      <div class="blk learn"><div class="blk-tag">Pro Tip</div>
+        <p>Start with Type 3 for 20 trades. Your win rate = 70%+. Then experiment with Type 2. After mastery, use Type 1.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRO 3: EXIT MANAGEMENT -->
+  <div class="day-card" id="pro3">
+    <div class="dc-head" onclick="tog('pro3')">
+      <div class="day-num">PRO</div>
+      <div class="day-title">Exit Management System (Protect + Profit)</div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk critical"><div class="blk-tag">GAME CHANGER</div>
+        <p>Most traders have fixed stop/target. Winners manage the trade. Lock in gains, let winners run, cut losers faster.</p>
+      </div>
+
+      <div class="exit-system">
+        <div class="exit-label">Exit Rules (Dynamic Management)</div>
+        
+        <div class="exit-step">
+          <div class="exit-trigger">At 1:1 RR Hit</div>
+          <div class="exit-action"><b>Exit 50% of position</b> — Lock in profit, remove risk</div>
+        </div>
+
+        <div class="exit-step">
+          <div class="exit-trigger">Immediately After</div>
+          <div class="exit-action"><b>Move SL to breakeven</b> — Now you can't lose</div>
+        </div>
+
+        <div class="exit-step">
+          <div class="exit-trigger">Remaining 50%</div>
+          <div class="exit-action"><b>Let run to liquidity zone</b> — Aim for 1:3 or 1:5 RR</div>
+        </div>
+
+        <div class="exit-step">
+          <div class="exit-trigger">If Hit Liquidity</div>
+          <div class="exit-action"><b>Exit remaining position</b> — Liquidity broken = volatility increases</div>
+        </div>
+      </div>
+
+      <div class="viz">
+        <div class="viz-tag">📈 Exit Management Flow (Step-by-Step)</div>
+        <svg width="100%" height="240" viewBox="0 0 500 240" style="display:block;margin:12px 0;border:2px solid #1a7a45;border-radius:4px;padding:8px;background:rgba(26,122,69,.05)">
+          <!-- Entry Price -->
+          <circle cx="50" cy="120" r="8" fill="#0891b2"/>
+          <text x="45" y="125" fill="#fff" font-size="9" font-weight="600">Entry</text>
+          <text x="20" y="160" fill="#0891b2" font-size="10" font-weight="600">10000</text>
+          
+          <!-- 1:1 RR Price (first target) -->
+          <line x1="50" y1="125" x2="180" y2="80" stroke="#b8860b" stroke-width="2" stroke-dasharray="4,4"/>
+          <rect x="175" y="70" width="50" height="25" fill="#b8860b" stroke="#b8860b" stroke-width="2" rx="3"/>
+          <text x="185" y="88" fill="#fff" font-size="9" font-weight="600">1:1 RR</text>
+          <text x="165" y="120" fill="#b8860b" font-size="10" font-weight="600">10150</text>
+          
+          <!-- ACTION 1: Exit 50% -->
+          <rect x="165" y="135" width="70" height="30" fill="#b8860b" opacity="0.6" stroke="#b8860b" stroke-width="2" rx="4"/>
+          <text x="175" y="150" fill="#fff" font-size="9" font-weight="600">Exit 50%</text>
+          <text x="170" y="165" fill="#fff" font-size="8">(Lock profit)</text>
+          
+          <!-- ACTION 2: Move SL -->
+          <rect x="165" y="170" width="70" height="30" fill="#1a7a45" stroke="#1a7a45" stroke-width="2" rx="4"/>
+          <text x="170" y="185" fill="#fff" font-size="9" font-weight="600">SL→Entry</text>
+          <text x="170" y="200" fill="#fff" font-size="8">(Safe now)</text>
+          
+          <!-- 50% Still in trade (runs further) -->
+          <line x1="220" y1="80" x2="380" y2="30" stroke="#1a7a45" stroke-width="3"/>
+          <circle cx="380" cy="30" r="6" fill="#1a7a45"/>
+          <text x="370" y="55" fill="#1a7a45" font-size="10" font-weight="600">Liquidity</text>
+          <text x="365" y="75" fill="#1a7a45" font-size="10" font-weight="600">10500</text>
+          
+          <!-- Final Exit -->
+          <rect x="360" y="35" width="60" height="25" fill="#1a7a45" stroke="#1a7a45" stroke-width="2" rx="3"/>
+          <text x="370" y="53" fill="#fff" font-size="9" font-weight="600">Exit 50%</text>
+          
+          <!-- RESULT -->
+          <rect x="300" y="140" width="120" height="60" fill="#1a7a45" opacity="0.1" stroke="#1a7a45" stroke-width="2" rx="4"/>
+          <text x="315" y="160" fill="#1a7a45" font-size="11" font-weight="600">RESULT</text>
+          <text x="315" y="180" fill="#1a7a45" font-size="10">First 50%: +150</text>
+          <text x="315" y="198" fill="#1a7a45" font-size="10">Second 50%: +175</text>
+          <text x="315" y="216" fill="#1a7a45" font-size="11" font-weight="600">Total: +325 ✓</text>
+        </svg>
+      </div>
+
+      <div class="blk learn"><div class="blk-tag">Why This Works</div>
+        <div class="li">Protects capital (50% locked at 1:1)</div>
+        <div class="li">Removes emotion (no loss possible)</div>
+        <div class="li">Allows massive wins (other 50% runs far)</div>
+        <div class="li">Respects market structure (exit at liquidity)</div>
+      </div>
+
+      <div class="blk story"><div class="blk-tag">Example</div>
+        <p><b>Entry:</b> 10000 | <b>SL:</b> 9900 (risk 100) | <b>TP:</b> 10150 (gain 150, 1:1.5). <b>At 10150:</b> Exit 50%, move SL to 10000. <b>Other 50%:</b> Runs to 10500. Total gain = 325 points (vs fixed 150).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRO 4: LOSING STREAK PROTOCOL -->
+  <div class="day-card" id="pro4">
+    <div class="dc-head" onclick="tog('pro4')">
+      <div class="day-num">PRO</div>
+      <div class="day-title">Losing Streak Protocol (Account Protection)</div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk critical"><div class="blk-tag">SURVIVAL RULE</div>
+        <p>3 losses in a row = something is broken. It's NOT your luck. Your system needs reset. Most traders don't do this = account blown up.</p>
+      </div>
+
+      <div class="losing-streak">
+        <div class="losing-label">If 3 Losses in a Row:</div>
+        <div class="losing-item">STOP trading for the DAY (not the hour — the day)</div>
+        <div class="losing-item">Review all 3 losses on chart — what went wrong?</div>
+        <div class="losing-item">Did you break a rule? (skip checklist, enter early, ignore no-trade zone?)</div>
+        <div class="losing-item">Fix ONE thing before trading again</div>
+        <div class="losing-item">NEVER revenge trade — emotion is HIGH, brain is OFF</div>
+      </div>
+
+      <div class="blk warn"><div class="blk-tag">Why This Matters</div>
+        <p>Losing streaks come from EMOTIONAL changes, not market changes. You break rules, take bigger risks, enter worse setups. This protocol forces you to STOP before real damage.</p>
+      </div>
+
+      <div class="blk prac"><div class="blk-tag">The Reality</div>
+        <div class="li">Even pros have losing days</div>
+        <div class="li">But pros STOP and fix it</div>
+        <div class="li">Amateurs keep going = account gone</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRO 5: FAST DECISION RULE -->
+  <div class="day-card" id="pro5">
+    <div class="dc-head" onclick="tog('pro5')">
+      <div class="day-num">PRO</div>
+      <div class="day-title">The 5-Second Rule (Real-Time Trading)</div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk story"><div class="blk-tag">Story</div>
+        <p>When price moves FAST, your brain freezes. You want to overthink. But in a fast market, overthinking = missing the move entirely.</p>
+      </div>
+
+      <div class="fast-decision">
+        <div class="fast-label">⚡ The 5-Second Rule</div>
+        <div class="fast-rule">If setup is: <b>Clear trend ✅ + Clear trap ✅ + Strong candle ✅</b></div>
+        <div class="fast-rule">→ Enter within <b>5 SECONDS</b></div>
+        <div class="fast-rule">If you <b>hesitate</b> or need to think = <b>SKIP the trade</b></div>
+      </div>
+
+      <div class="blk learn"><div class="blk-tag">Why 5 Seconds?</div>
+        <div class="li">Overthinking = missed entry + worse price</div>
+        <div class="li">If setup is clear, your gut knows it (subconscious pattern recognition)</div>
+        <div class="li">Hesitation = setup is NOT actually clear = skip is CORRECT</div>
+      </div>
+
+      <div class="comp-grid">
+        <div class="comp-item comp-yes">
+          <div class="comp-label">✓ DO THIS</div>
+          <div class="li chk">See clear setup</div>
+          <div class="li chk">Feel instant YES</div>
+          <div class="li chk">Enter in 5 sec</div>
+        </div>
+        <div class="comp-item comp-no">
+          <div class="comp-label">✕ NEVER DO THIS</div>
+          <div class="li x">See setup</div>
+          <div class="li x">Think for 30 sec</div>
+          <div class="li x">Miss entry</div>
+        </div>
+      </div>
+
+      <div class="blk prac"><div class="blk-tag">Practice This</div>
+        <div class="li">Next 5 trades: Time yourself (from setup seen to entry executed)</div>
+        <div class="li">If under 5 sec = trust your brain</div>
+        <div class="li">If over 5 sec = hesitation = skip</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRO 6: REPLAY PRACTICE MODE -->
+  <div class="day-card" id="pro6">
+    <div class="dc-head" onclick="tog('pro6')">
+      <div class="day-num">PRO</div>
+      <div class="day-title">Replay Practice Mode (Next Level Skill Building)</div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk story"><div class="blk-tag">Story</div>
+        <p>Chart marking is good. But actual trading requires REAL-TIME thinking. Replay mode = practice real-time thinking, zero risk.</p>
+      </div>
+
+      <div class="blk learn"><div class="blk-tag">How Replay Works (TradingView Feature)</div>
+        <div class="li chk">Use TradingView's replay tool</div>
+        <div class="li chk">Hide all future candles</div>
+        <div class="li chk">Watch 1 candle at a time</div>
+        <div class="li chk">PAUSE after each candle</div>
+        <div class="li chk">Ask: "What comes next?"</div>
+        <div class="li chk">Then hit PLAY to see if you were right</div>
+      </div>
+
+      <div class="blk critical"><div class="blk-tag">What This Builds</div>
+        <p><b>Pattern recognition:</b> You see setup forming. <b>Real-time thinking:</b> You make instant predictions. <b>Confidence:</b> You see you were right (or learn why you were wrong). <b>Zero risk:</b> No money involved.</p>
+      </div>
+
+      <div class="rule-box">
+        <div class="rule-label">Replay Progression</div>
+        <div class="rule-text">
+          <div class="li">Week 1: 5 replays/day, write predictions</div>
+          <div class="li">Week 2: 3 replays/day, gut feelings</div>
+          <div class="li">Week 3: See setup, instant prediction = 80%+ accuracy</div>
+          <div class="li">Week 4: Ready for live trading with confidence</div>
+        </div>
+      </div>
+
+      <div class="blk prac"><div class="blk-tag">Do This Daily</div>
+        <div class="li">Pick a 1-hour chart from 1 week ago</div>
+        <div class="li">Do 3 replays (15 min each = 45 minutes total)</div>
+        <div class="li">Track your prediction accuracy</div>
+        <div class="li">After 30 days: Your intuition will be SHARP</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRO 7: EDGE DISCOVERY -->
+  <div class="day-card" id="pro7">
+    <div class="dc-head" onclick="tog('pro7')">
+      <div class="day-num">PRO</div>
+      <div class="day-title">Personal Edge Discovery (Your Secret Advantage)</div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk story"><div class="blk-tag">Story</div>
+        <p>The system you learned works. But YOUR edge comes from YOUR strengths. Some traders are best at trap entries. Others at pullback entries. Find yours.</p>
+      </div>
+
+      <div class="edge-discovery">
+        <div class="edge-label">🔍 Track Your Trades (30 Trades Minimum)</div>
+        
+        <div class="edge-item"><strong>Which setup wins most?</strong> Trap entries? Pullback entries? Confirmation entries?</div>
+        <div class="edge-item"><strong>Which time works best?</strong> Morning? Afternoon? During volatility spikes?</div>
+        <div class="edge-item"><strong>Which mistake repeats?</strong> Entering too early? Exiting too soon? Ignoring stops?</div>
+        <div class="edge-item"><strong>Which pairs are best?</strong> Some traders dominate BTC, others ETH or altcoins.</div>
+        <div class="edge-item"><strong>Which timeframe feels best?</strong> 15m? 1h? 4h? Where do you see patterns easiest?</div>
+      </div>
+
+      <div class="blk critical"><div class="blk-tag">After 30 Trades, You'll Know:</div>
+        <p><b>YOUR best setup + YOUR best time + YOUR best pair + YOUR best timeframe = YOUR EDGE.</b></p>
+      </div>
+
+      <div class="blk learn"><div class="blk-tag">Why This Matters</div>
+        <div class="li">General system: 50-55% win rate</div>
+        <div class="li">YOUR system (your edge): 65-75% win rate</div>
+        <div class="li">Professional traders KNOW their edge, beginners don't</div>
+      </div>
+
+      <div class="blk prac"><div class="blk-tag">Start Tracking Now</div>
+        <div class="li">Write down EVERY trade: Setup type, time, pair, entry price, exit price, P/L</div>
+        <div class="li">After 30 trades, review the data</div>
+        <div class="li">Which 1 setup appeared in your 10 BIGGEST wins?</div>
+        <div class="li">Lock into THAT setup for next 30 trades</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRO 8: EMOTIONAL STATE FILTER -->
+  <div class="day-card" id="pro8">
+    <div class="dc-head" onclick="tog('pro8')">
+      <div class="day-num">PRO</div>
+      <div class="day-title">Emotional State Filter (Before You Even Look at Charts)</div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk critical"><div class="blk-tag">HIDDEN KILLER</div>
+        <p>This is WHY beginner traders fail but won't admit it. They trade when they should be sleeping, eating, or meditating. They break every rule when emotionally charged.</p>
+      </div>
+
+      <div class="emotional-filter">
+        <div class="emotional-label">❌ Do NOT Trade If:</div>
+
+        <div class="emotion-item">
+          <div class="emotion-emoji">😡</div>
+          <div class="emotion-text"><span class="emotion-label">ANGRY:</span> Previous loss made you mad. You want revenge. You'll overtrade, take bigger risks, ignore stops.</div>
+        </div>
+
+        <div class="emotion-item">
+          <div class="emotion-emoji">😴</div>
+          <div class="emotion-text"><span class="emotion-label">TIRED:</span> Your brain is OFF. You won't see traps clearly. You'll miss signals. You'll stay in losing trades too long.</div>
+        </div>
+
+        <div class="emotion-item">
+          <div class="emotion-emoji">😎</div>
+          <div class="emotion-text"><span class="emotion-label">OVERCONFIDENT:</span> Last 2 wins made you think you're genius. You won't follow checklist. You'll size too big. You'll skip entries that are too "boring".</div>
+        </div>
+
+        <div class="emotion-item">
+          <div class="emotion-emoji">😤</div>
+          <div class="emotion-text"><span class="emotion-label">REVENGE MODE:</span> You want your losses back RIGHT NOW. You'll chase entries. You'll move stops. You'll double-down on losing positions.</div>
+        </div>
+      </div>
+
+      <div class="rule-box">
+        <div class="rule-label">The Simple Test</div>
+        <div class="rule-text">Before trading, ask yourself: "Am I emotionally neutral?" If answer is NO → Close the platform. Go walk, eat, sleep, meditate. Come back when you're calm.</div>
+      </div>
+
+      <div class="blk learn"><div class="blk-tag">Professional Traders Know</div>
+        <p>Trading > emotion. System works when executed calmly. System fails when executed emotionally. That's the difference between 65% win rate and 35% win rate.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRO 9: JOURNAL TEMPLATE -->
+  <div class="day-card" id="pro9">
+    <div class="dc-head" onclick="tog('pro9')">
+      <div class="day-num">PRO</div>
+      <div class="day-title">Trading Journal Template (Build Awareness Fast)</div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk story"><div class="blk-tag">Story</div>
+        <p>A journal isn't about winning. It's about AWARENESS. You'll see your patterns in 30 days. Traders without journals repeat mistakes for 5 years.</p>
+      </div>
+
+      <div class="journal-template">
+        <div class="journal-label">📊 After Every Trade, Fill This Out:</div>
+
+        <div class="journal-field">
+          <div class="journal-key">Setup Type</div>
+          <div class="journal-value">(Trap Entry / Confirmation Entry / Pullback Entry)</div>
+        </div>
+
+        <div class="journal-field">
+          <div class="journal-key">Pair & Timeframe</div>
+          <div class="journal-value">(BTC 15m / ETH 4h / etc.)</div>
+        </div>
+
+        <div class="journal-field">
+          <div class="journal-key">Entry Reason</div>
+          <div class="journal-value">(What made you enter? Trap confirmed? Strong candle? Liquidity above?)</div>
+        </div>
+
+        <div class="journal-field">
+          <div class="journal-key">Mistake (if any)</div>
+          <div class="journal-value">(Did you break a rule? Enter before confirmation? Skip checklist?)</div>
+        </div>
+
+        <div class="journal-field">
+          <div class="journal-key">Emotion During Trade</div>
+          <div class="journal-value">(Were you calm? Nervous? Excited? Scared?)</div>
+        </div>
+
+        <div class="journal-field">
+          <div class="journal-key">Lesson Learned</div>
+          <div class="journal-value">(What will you do differently next time?)</div>
+        </div>
+      </div>
+
+      <div class="blk critical"><div class="blk-tag">Why This Builds Awareness FAST</div>
+        <p>After 20 trades: You see YOUR mistake pattern. After 30: It's obvious. After 50: It's fixed. That's how professionals improve. Journaling = self-reflection = improvement.</p>
+      </div>
+
+      <div class="blk prac"><div class="blk-tag">Make It Easy</div>
+        <div class="li">Use simple Google Doc or paper notebook</div>
+        <div class="li">Spend 2 minutes per trade (30 seconds talking, 90 seconds writing)</div>
+        <div class="li">Review weekly (5 min scan for patterns)</div>
+        <div class="li">After 30 days: Read all entries = your improvement roadmap</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRO 10: THE ONLY GOAL -->
+  <div class="day-card" id="pro10">
+    <div class="dc-head" onclick="tog('pro10')">
+      <div class="day-num">PRO</div>
+      <div class="day-title">The ONLY Goal That Matters</div>
+      <div class="dc-arr">▼</div>
+    </div>
+    <div class="dc-body">
+      <div class="blk critical"><div class="blk-tag">MINDSET SHIFT</div>
+        <p>Most traders measure success wrong. They measure PROFIT. That's the #1 reason they fail.</p>
+      </div>
+
+      <div class="real-goal">
+        <div class="real-goal-inner">
+          <div class="goal-label">🎯 The REAL Goal</div>
+          <div class="goal-text">"Follow the system perfectly for 20 trades"</div>
+          <div class="goal-subtext">
+            <b>NOT:</b> Profit (that's the outcome)<br>
+            <b>NOT:</b> Win rate (that comes from following system)<br>
+            <b>NOT:</b> Big account (that takes time)<br>
+            <br>
+            <b>YES:</b> Execute the system EXACTLY as taught, every single trade, for 20 straight trades.
+          </div>
+        </div>
+      </div>
+
+      <div class="rule-box">
+        <div class="rule-label">The Magic Formula</div>
+        <div class="rule-text">
+          <div class="li">Perfect process for 20 trades = profit follows automatically</div>
+          <div class="li">Sloppy process for 200 trades = losses continue</div>
+          <div class="li">System doesn't matter. Execution matters.</div>
+        </div>
+      </div>
+
+      <div class="blk learn"><div class="blk-tag">Why This Works</div>
+        <div class="li">Process-focused = repeatable = improvement</div>
+        <div class="li">Profit-focused = emotional = inconsistent</div>
+        <div class="li">If you execute perfectly, even losing trades teach you something</div>
+        <div class="li">If you execute sloppily, even winning trades were luck</div>
+      </div>
+
+      <div class="comp-grid">
+        <div class="comp-item comp-no">
+          <div class="comp-label">❌ BEGINNER GOAL</div>
+          <div class="li x">Make $10,000</div>
+          <div class="li x">Get 70% win rate</div>
+          <div class="li x">Double my account</div>
+        </div>
+        <div class="comp-item comp-yes">
+          <div class="comp-label">✓ PROFESSIONAL GOAL</div>
+          <div class="li chk">Execute system 100% for 20 trades</div>
+          <div class="li chk">Follow checklist every time</div>
+          <div class="li chk">Journal every trade</div>
+        </div>
+      </div>
+
+      <div class="blk critical"><div class="blk-tag">The Truth</div>
+        <p>If you execute perfectly for 20 trades, profit WILL come. Not from luck. From actually being better. That profit will be SUSTAINABLE, not a fluke.</p>
+      </div>
+
+      <div class="blk story"><div class="blk-tag">Your 20-Trade Challenge</div>
+        <div class="li">Next 20 trades: ZERO exceptions to the system</div>
+        <div class="li">5-point checklist: MUST be YES on all 5</div>
+        <div class="li">No trade zones: MUST be respected</div>
+        <div class="li">Time filters: MUST be checked</div>
+        <div class="li">Journal: MUST be filled after each</div>
+        <div class="li">Emotional state: MUST be calm</div>
+        <div class="li">Result? You don't care (yet). Just execute perfectly.</div>
+        <div class="li" style="margin-top:8px;font-weight:600">After 20 perfect trades, you'll be profitable and KNOW it.</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end pro section -->
+
 <!-- FINAL SUMMARY -->
 <div style="background:var(--cream);border:1px solid var(--border-med);border-radius:6px;padding:28px;margin:40px 0">
   <div style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:16px">Your 20-Day Journey Complete</div>
@@ -1308,7 +2349,7 @@ function markDone(e,n){
 }
 
 function tog(n){
-  const c=document.getElementById('c'+n);
+  const c=document.getElementById('c'+n) || document.getElementById(n);
   if(c)c.classList.toggle('open');
 }
 
